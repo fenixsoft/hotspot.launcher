@@ -15,9 +15,9 @@
 
 HotSpot Launcher是一个用于快速生成HotSpot虚拟机启动参数的Eclipse插件。
 
-目前最新的HotSpot虚拟机各种参数（product、manageable、develop、diagnostic、experimental...）已经超过1000个，即使对于比较熟悉虚拟机的同学，要记住它们也十分困难，每次去globals.hpp看或者用PrintFlagsFinal来查也不方便。如果你有类似的需求，这个小插件应该能带来一些便利。
+目前最新的HotSpot虚拟机各种参数（product、manageable、develop、diagnostic、experimental...）已经超过1000个，即使对于比较熟悉虚拟机的同学，要记住它们也十分困难，每次去globals.hpp看或者用-XX:PrintFlagsFinal来查也不方便。如果你有类似的需求，这个小插件应该能带来一些便利。
 
-##下载地址##：[github.com](https://raw.github.com/fenixsoft/hotspot.launcher/master/dest/plugins/org.fenixsoft.hotspot.launcher_1.0.0.201310291631.jar)
+**下载地址**：[org.fenixsoft.hotspot.launcher_1.0.0.201310291631.jar](https://raw.github.com/fenixsoft/hotspot.launcher/master/dest/plugins/org.fenixsoft.hotspot.launcher_1.0.0.201310291631.jar)
 
 
 #### 二、快速上手：
@@ -49,7 +49,7 @@ HotSpot Launcher是一个用于快速生成HotSpot虚拟机启动参数的Eclips
 #### 四、反馈
 
 - 提 issue 或者 pull-request
-- [邮箱反馈：icyfenix@gmail.com](mailto:icyfenix@gmail.com?subject=对HotSpot Lanucher程序有建议)
+- 邮箱反馈：[icyfenix@gmail.com](mailto:icyfenix@gmail.com?subject=对HotSpot Lanucher程序有建议)
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fenixsoft/hotspot.launcher/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
