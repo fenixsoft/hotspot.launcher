@@ -51,6 +51,7 @@ HotSpot Launcher是一个用于快速生成HotSpot虚拟机启动参数的Eclips
 
 - 提 issue 或者 pull-request
 - 邮箱反馈：[icyfenix@gmail.com](mailto:icyfenix@gmail.com?subject=对HotSpot Lanucher程序有建议)
+- Site：[http://fenixsoft.github.io/hotspot.launcher/](http://fenixsoft.github.io/hotspot.launcher/)
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fenixsoft/hotspot.launcher/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
