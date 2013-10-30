@@ -17,13 +17,12 @@ HotSpot Launcher是一个用于快速生成HotSpot虚拟机启动参数的Eclips
 
 目前最新的HotSpot虚拟机各种参数（product、manageable、develop、diagnostic、experimental...）已经超过1000个，即使对于比较熟悉虚拟机的同学，要记住它们也十分困难，每次去globals.hpp看或者用PrintFlagsFinal来查也不方便。如果你有类似的需求，这个小插件应该能带来一些便利。
 
-下载地址：[GitHub](https://raw.github.com/fenixsoft/hotspot.launcher/master/dest/plugins/org.fenixsoft.hotspot.launcher_1.0.0.201310291631.jar)
+##下载地址##：[github.com](https://raw.github.com/fenixsoft/hotspot.launcher/master/dest/plugins/org.fenixsoft.hotspot.launcher_1.0.0.201310291631.jar)
 
 
 #### 二、快速上手：
 
 - 安装：把插件直接扔到Eclipse的dropins文件夹即可，其他link等安装方式请参考Eclipse文档。
-- 使用：
 
 + HotSpot Launcher增强了Eclipse原有Run/Debug Configurations中的Argument页签，如下图所示，原来的Argument页签变为了HS Argument，下面增加了Basic、Advance两个页签，在Basic页签中包含了Eclipse原有的全部功能。 
 
@@ -43,8 +42,8 @@ HotSpot Launcher是一个用于快速生成HotSpot虚拟机启动参数的Eclips
 #### 三、版权
 
 - 本插件遵循LGPL开源协议
-- 参数描述来源于OpenJDK源码的share/vm/runtime/globals.hpp文件
-- 部分图标来源于Eclipse
+- 参数描述来源于[OpenJDK](http://openjdk.java.net/)源码的share/vm/runtime/globals.hpp文件
+- 部分图标来源于[Eclipse.org](http://www.eclipse.org/)
 
 
 #### 四、反馈
@@ -53,6 +52,5 @@ HotSpot Launcher是一个用于快速生成HotSpot虚拟机启动参数的Eclips
 - [邮箱反馈：icyfenix@gmail.com](mailto:icyfenix@gmail.com?subject=对HotSpot Lanucher程序有建议)
 
 
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fenixsoft/org.fenixsoft.hotspot.launcher/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fenixsoft/hotspot.launcher/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
