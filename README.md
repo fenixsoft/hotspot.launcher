@@ -23,16 +23,19 @@ HotSpot Launcher是一个用于快速生成HotSpot虚拟机启动参数的Eclips
 - 安装：把插件直接扔到Eclipse的dropins文件夹即可，其他link等安装方式请参考Eclipse文档。
 - 使用：
 
-1.HotSpot Launcher增强了Eclipse原有Run/Debug Configurations中的Argument页签，如下图所示，原来的Argument页签变为了HS Argument，下面增加了Basic、Advance两个页签，在Basic页签中包含了Eclipse原有的全部功能。 
-![image](https://raw.github.com/fenixsoft/hotspot.launcher/master/doc/sshot-1.xml)
+1. HotSpot Launcher增强了Eclipse原有Run/Debug Configurations中的Argument页签，如下图所示，原来的Argument页签变为了HS Argument，下面增加了Basic、Advance两个页签，在Basic页签中包含了Eclipse原有的全部功能。 
 
-2.在Advacne页签中，提供了HotSpot虚拟机所有参数树形列表显示，在Basic页签的VM Argument文本框中填写的内容，已经被勾选上，如下图所示（选择过滤仅显示被选中的参数）
-![image](https://raw.github.com/fenixsoft/hotspot.launcher/master/doc/sshot-2.xml)
+![image](https://raw.github.com/fenixsoft/hotspot.launcher/master/doc/sshot-1.png)
 
-3.在Advacne页签中，可以勾选需要打开的虚拟机参数，选中参数后，树形列表下方提供了该参数作用的简要说明。上方的文本框是参数快速过滤，后面4个按钮作用为“参数类型过滤（譬如仅显示debug和experimental的参数）”、“仅显示被选中的参数”、“全部展开”和“全部搜索”。
-![image](https://raw.github.com/fenixsoft/hotspot.launcher/master/doc/sshot-3.xml)
+2. 在Advacne页签中，提供了HotSpot虚拟机所有参数树形列表显示，在Basic页签的VM Argument文本框中填写的内容，已经被勾选上，如下图所示（选择过滤仅显示被选中的参数）
 
-5.勾选参数后，可在Value列输入参数值，Default列是默认值供参考，转回Basic页签时将会把勾选的生成成HotSpot虚拟机的参数文本，显示在Basic页签的VM Argument文本框中。
+![image](https://raw.github.com/fenixsoft/hotspot.launcher/master/doc/sshot-2.png)
+
+3. 在Advacne页签中，可以勾选需要打开的虚拟机参数，选中参数后，树形列表下方提供了该参数作用的简要说明。上方的文本框是参数快速过滤，后面4个按钮作用为“参数类型过滤（譬如仅显示debug和experimental的参数）”、“仅显示被选中的参数”、“全部展开”和“全部搜索”。
+
+![image](https://raw.github.com/fenixsoft/hotspot.launcher/master/doc/sshot-3.png)
+
+5. 勾选参数后，可在Value列输入参数值，Default列是默认值供参考，转回Basic页签时将会把勾选的生成成HotSpot虚拟机的参数文本，显示在Basic页签的VM Argument文本框中。
 
 
 #### 三、版权
