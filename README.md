@@ -19,6 +19,7 @@ HotSpot Launcher是一个用于快速生成HotSpot虚拟机启动参数的Eclips
 
 **下载地址**：[org.fenixsoft.hotspot.launcher_1.0.0.201310291631.jar](https://raw.github.com/fenixsoft/hotspot.launcher/master/dest/plugins/org.fenixsoft.hotspot.launcher_1.0.0.201310291631.jar)
 
+**运行环境**：JDK 1.6+ 、 Eclipse 3.5+
 
 #### 二、快速上手：
 
