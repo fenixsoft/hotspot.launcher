@@ -1,0 +1,1082 @@
+standard	Standard	Xmixed	flag		mixed mode execution (default)
+standard	Standard	Xint	flag		interpreted mode execution only
+standard	Standard	Xbootclasspath	ccstrlist		set search path for bootstrap classes and resources
+standard	Standard	Xdiag	flag		show additional diagnostic messages
+standard	Standard	Xnoclassgc	flag		disable class garbage collection
+standard	Standard	Xincgc	flag		enable incremental garbage collection
+standard	Standard	Xloggc	flag		log GC status to a file with time stamps
+standard	Standard	Xbatch	flag		disable background compilation
+standard	Standard	Xms	uintx		set initial Java heap size
+standard	Standard	Xmx	uintx		set maximum Java heap size
+standard	Standard	Xss	uintx		set java thread stack size
+standard	Standard	Xmn	uintx		set java young generation size
+standard	Standard	Xprof	ccstr		output cpu profiling data
+standard	Standard	Xfuture	flag		enable strictest checks, anticipating future default
+standard	Standard	Xrs	flag		reduce use of OS signals by Java/VM
+standard	Standard	Xcheck	ccstr	jni	jni:perform additional checks for JNI functions
+standard	Standard	Xshare	ccstr	auto	off:do not attempt to use shared class data, auto:use shared class data if possible (default), on:require using shared class data, otherwise fail.
+standard	Standard	XshowSettings	ccstr	all	all/vm/property/locale:show all/vm related/property/locale related settings and continue
+standard	Standard	d32	flag		use a 32-bit data model if available
+standard	Standard	d64	flag		use a 64-bit data model if available
+standard	Standard	client	flag		to select the client VM
+standard	Standard	server	flag		to select the server VM
+standard	Standard	verbose	ccstr		jni/gc/class enable verbose jni/gc/class output
+standard	Standard	version	flag		print product version and exit
+standard	Standard	showversion	flag		print product version and continue
+standard	Standard	jre-restrict-search	flag		include user private JREs in the version search
+standard	Standard	no-jre-restrict-search	flag		exclude user private JREs in the version search
+standard	Standard	help	flag		print this help message
+standard	Standard	enableassertions	ccstrlist		enable assertions with specified granularity
+standard	Standard	disableassertions	ccstrlist		disable assertions with specified granularity
+standard	Standard	enablesystemassertions	ccstrlist		enable system assertions
+standard	Standard	disablesystemassertions	ccstrlist		disable system assertions
+standard	Standard	ea	ccstrlist		enable assertions with specified granularity
+standard	Standard	da	ccstrlist		disable assertions with specified granularity
+standard	Standard	esa	ccstrlist		enable system assertions
+standard	Standard	dsa	ccstrlist		disable system assertions
+lp64_product	JIT	UseCompressedOops	bool	false	Use 32-bit object references in 64-bit VM. lp64_product means flag is always constant in 32 bit VM
+notproduct	JIT	CheckCompressedOops	bool	true	generate checks in encoding/decoding code in debug VM
+product_pd	Memory	HeapBaseMinAddress	uintx	\	OS specific low limit for heap base address
+diagnostic	Trace	PrintCompressedOopsMode	bool	false	Print compressed oops base address and encoding mode
+lp64_product	Memory	ObjectAlignmentInBytes	intx	8	Default object alignment in bytes, 8 is minimum
+product_pd	Memory	UseMembar	bool	\	(Unstable) Issues membars on thread state transitions
+product	CPU/Mult-Threads	UsePPCLWSYNC	bool	true	Use lwsync instruction if true, else use slower sync
+develop	Mult-Threads	CleanChunkPoolAsync	bool	falseInEmbedded	Whether to clean the chunk pool asynchronously
+experimental	GC	UseMemSetInBOT	bool	true	(Unstable) uses memset in BOT updates in GC code
+diagnostic	JVM Options	UnlockDiagnosticVMOptions	bool	trueInDebug	Enable normal processing of flags relating to field diagnostics
+experimental	JVM Options	UnlockExperimentalVMOptions	bool	false	Enable normal processing of flags relating to experimental features
+product	Trace	JavaMonitorsInStackTrace	bool	true	Print info. about Java monitor locks when the stacks are dumped
+product_pd	OS/Memory	UseLargePages	bool	\	Use large page memory
+product_pd	OS/Memory	UseLargePagesIndividualAllocation	bool	\	Allocate large pages individually for better affinity
+develop	OS/Memory	LargePagesIndividualAllocationInjectError	bool	false	Fail large pages individual allocation
+develop	OS/Memory/Trace	TracePageSizes	bool	false	Trace page size selection and usage.
+product	Memory	UseNUMA	bool	false	Use NUMA if available
+product	Memory	UseNUMAInterleaving	bool	false	Interleave memory across NUMA nodes if available
+product	Memory	NUMAInterleaveGranularity	uintx	2*M	Granularity to use for NUMA interleaving on Windows OS
+product	Memory	ForceNUMA	bool	false	Force NUMA optimizations on single-node/UMA systems
+product	Memory	NUMAChunkResizeWeight	intx	20	Percentage (0-100) used to weight the current sample when computing exponentially decaying average for AdaptiveNUMAChunkSizing
+product	Memory	NUMASpaceResizeRate	intx	1*G	Do not reallocate more that this amount per collection
+product	Memory	UseAdaptiveNUMAChunkSizing	bool	true	Enable adaptive chunk sizing for NUMA
+product	Memory	NUMAStats	bool	false	Print NUMA stats in detailed heap information
+product	Memory	NUMAPageScanRate	intx	256	Maximum number of pages to include in the page scan procedure
+product_pd	CPU	NeedsDeoptSuspend	bool	\	True for register window machines (sparc/ia64)
+product	CPU	UseSSE	intx	99	Highest supported SSE instructions set on x86/x64
+product	CPU	UseAVX	intx	99	Highest supported AVX instructions set on x86/x64
+product	CPU	UseVIS	intx	99	Highest supported VIS instructions set on Sparc
+product	OS/Memory	LargePageSizeInBytes	uintx	0	Large page size (0 to let VM choose the page size
+product	OS/Memory	LargePageHeapSizeThreshold	uintx	128*M	Use large pages if max heap is at least this big
+product	OS	ForceTimeHighResolution	bool	false	Using high time resolution(For Win32 only)
+develop	Trace	TraceItables	bool	false	Trace initialization and use of itables
+develop	Trace	TracePcPatching	bool	false	Trace usage of frame::patch_pc
+develop	Trace	TraceJumps	bool	false	Trace assembly jumps in thread ring buffer
+develop	Trace	TraceRelocator	bool	false	Trace the bytecode relocator
+develop	Trace/JIT	TraceLongCompiles	bool	false	Print out every time compilation is longer than a given threashold
+develop	GC	SafepointALot	bool	false	Generates a lot of safepoints. Works with GuaranteedSafepointInterval
+product_pd	JIT	BackgroundCompilation	bool	\	A thread requesting compilation is not blocked during compilation
+product	Trace	PrintVMQWaitTime	bool	false	Prints out the waiting time in VM operation queue
+develop	JIT	BailoutToInterpreterForThrows	bool	false	Compiled methods which throws/catches exceptions will be deopt and intp.
+develop	JIT	NoYieldsInMicrolock	bool	false	Disable yields in microlock
+develop	Trace	TraceOopMapGeneration	bool	false	Shows oopmap generation
+product	JIT	MethodFlushing	bool	true	Reclamation of zombie and not-entrant methods
+develop	Verify	VerifyStack	bool	false	Verify stack of each thread when it is entering a runtime call
+diagnostic	JIT	ForceUnreachable	bool	false	Make all non code cache addresses to be unreachable with forcing use of 64bit literal fixups
+notproduct	Misc	StressDerivedPointers	bool	false	Force scavenge when a derived pointers is detected on stack after rtm call
+develop	Trace	TraceDerivedPointers	bool	false	Trace traversal of derived pointers on stack
+notproduct	Trace	TraceCodeBlobStacks	bool	false	Trace stack-walk of codeblobs
+product	Trace/JNI	PrintJNIResolving	bool	false	Used to implement -v:jni
+notproduct	Trace	PrintRewrites	bool	false	Print methods that are being rewritten
+product	JIT	UseInlineCaches	bool	true	Use Inline Caches for virtual calls 
+develop	JIT	InlineArrayCopy	bool	true	inline arraycopy native that is known to be part of base library DLL
+develop	JIT	InlineObjectHash	bool	true	inline Object::hashCode() native that is known to be part of base library DLL
+develop	JIT	InlineObjectCopy	bool	true	inline Object.clone and Arrays.copyOf[Range] intrinsics
+develop	JIT	InlineNatives	bool	true	inline natives that are known to be part of base library DLL
+develop	JIT	InlineMathNatives	bool	true	inline SinD, CosD, etc.
+develop	JIT	InlineClassNatives	bool	true	inline Class.isInstance, etc
+develop	JIT	InlineAtomicLong	bool	true	inline sun.misc.AtomicLong
+develop	JIT	InlineThreadNatives	bool	true	inline Thread.currentThread, etc
+develop	JIT	InlineReflectionGetCallerClass	bool	true	inline sun.reflect.Reflection.getCallerClass(), known to be part of base library DLL
+develop	JIT	InlineUnsafeOps	bool	true	inline memory ops (native methods) from sun.misc.Unsafe
+develop	Misc	ConvertCmpD2CmpF	bool	true	Convert cmpD to cmpF when one input is constant in float range
+develop	Misc	ConvertFloat2IntClipping	bool	true	Convert float2int clipping idiom to integer clipping
+develop	String	SpecialStringCompareTo	bool	true	special version of string compareTo
+develop	String	SpecialStringIndexOf	bool	true	special version of string indexOf
+develop	String	SpecialStringEquals	bool	true	special version of string equals
+develop	Misc	SpecialArraysEquals	bool	true	special version of Arrays.equals(char[],char[])
+product	JNI	CriticalJNINatives	bool	true	check for critical JNI entry points
+notproduct	JNI	StressCriticalJNINatives	bool	false	Exercise register saving code in critical natives
+product	CPU	UseSSE42Intrinsics	bool	false	SSE4.2 versions of intrinsics
+product	GC	UseCondCardMark	bool	false	Check for already marked card before updating card table
+develop	Trace	TraceCallFixup	bool	false	traces all call fixups
+develop	JIT	DeoptimizeALot	bool	false	deoptimize at every exit from the runtime system
+notproduct	JIT	DeoptimizeOnlyAt	ccstrlist		a comma separated list of bcis to deoptimize at
+product	JIT	DeoptimizeRandom	bool	false	deoptimize random frames on random exit from the runtime system
+notproduct	JIT	ZombieALot	bool	false	creates zombies (non-entrant) at exit from the runt. system
+product	JIT	UnlinkSymbolsALot	bool	false	unlink unreferenced symbols from the symbol table at safepoints
+notproduct	Trace	WalkStackALot	bool	false	trace stack (no print) at every exit from the runtime system
+product	Trace	Debugging	bool	false	set when executing debug methods in debug.ccp (to prevent triggering assertions)
+notproduct	Trace/GC	StrictSafepointChecks	bool	trueInDebug	Enable strict checks that safepoints cannot happen for threads that used No_Safepoint_Verifier
+notproduct	Verify	VerifyLastFrame	bool	false	Verify oops on last frame on entry to VM
+develop	Trace	TraceHandleAllocation	bool	false	Prints out warnings when suspicious many handles are allocated
+product	GC	UseCompilerSafepoints	bool	true	Stop at safepoints in compiled code
+product	ClassLoading	UseSplitVerifier	bool	true	use split verifier with StackMapTable attributes
+product	ClassLoading	FailOverToOldVerifier	bool	true	fail over to old verifier when split verifier fails
+develop	GC	ShowSafepointMsgs	bool	false	Show msg. about safepoint synch.
+product	GC	SafepointTimeout	bool	false	Time out and warn or fail after SafepointTimeoutDelay milliseconds if failed to reach safepoint
+develop	GC	DieOnSafepointTimeout	bool	false	Die upon failure to reach safepoint (see SafepointTimeout)
+product	Misc	SuspendRetryCount	intx	50	Maximum retry count for an external suspend request
+product	Misc	SuspendRetryDelay	intx	5	Milliseconds to delay per retry (* current_retry_count)
+product	Misc	AssertOnSuspendWaitFailure	bool	false	Assert/Guarantee on external suspend wait failure
+product	Trace	TraceSuspendWaitFailures	bool	false	Trace external suspend wait failures
+product	Misc	MaxFDLimit	bool	true	Bump the number of file descriptors to max in solaris.
+diagnostic	Trace	LogEvents	bool	true	Enable the various ring buffer event logs
+diagnostic	Trace	LogEventsBufferEntries	intx	10	Enable the various ring buffer event logs
+product	Verify/ClassLoading	BytecodeVerificationRemote	bool	true	Enables the Java bytecode verifier for remote classes
+product	Verify/ClassLoading	BytecodeVerificationLocal	bool	false	Enables the Java bytecode verifier for local classes
+develop	Exceptions	ForceFloatExceptions	bool	trueInDebug	Force exceptions on FP stack under/overflow
+develop	Misc	SoftMatchFailure	bool	trueInProduct	If the DFA fails to match a node, print a message and bail out
+develop	Verify	VerifyStackAtCalls	bool	false	Verify that the stack pointer is unchanged after calls
+develop	Trace	TraceJavaAssertions	bool	false	Trace java language assertions
+notproduct	Misc	CheckAssertionStatusDirectives	bool	false	temporary - see javaClasses.cpp
+notproduct	Trace	PrintMallocFree	bool	false	Trace calls to C heap malloc/free allocation
+product	Trace	PrintOopAddress	bool	false	Always print the location of the oop
+notproduct	JIT/Verify	VerifyCodeCacheOften	bool	false	Verify compiled-code cache often
+develop	Memory	ZapDeadCompiledLocals	bool	false	Zap dead locals in compiler frames
+notproduct	Memory	ZapDeadLocalsOld	bool	false	Zap dead locals (old version, zaps all frames when entering the VM
+notproduct	Misc	CheckOopishValues	bool	false	Warn if value contains oop ( requires ZapDeadLocals)
+develop	Memory	UseMallocOnly	bool	false	use only malloc/free for allocation (no resource area/arena)
+develop	Trace	PrintMalloc	bool	false	print all malloc/free calls
+develop	Trace	PrintMallocStatistics	bool	false	print malloc/free statistics
+develop	Memory	ZapResourceArea	bool	trueInDebug	Zap freed resource/arena space with 0xABABABAB
+notproduct	Memory	ZapVMHandleArea	bool	trueInDebug	Zap freed VM handle space with 0xBCBCBCBC
+develop	JNI	ZapJNIHandleArea	bool	trueInDebug	Zap freed JNI handle space with 0xFEFEFEFE
+notproduct	Memory	ZapStackSegments	bool	trueInDebug	Zap allocated/freed Stack segments with 0xFADFADED
+develop	Memory	ZapUnusedHeapArea	bool	trueInDebug	Zap unused heap space with 0xBAADBABE
+develop	Trace	TraceZapUnusedHeapArea	bool	false	Trace zapping of unused heap space
+develop	Memory	CheckZapUnusedHeapArea	bool	false	Check zapping of unused heap space
+develop	Memory	ZapFillerObjects	bool	trueInDebug	Zap filler objects with 0xDEAFBABE
+develop	Trace	PrintVMMessages	bool	true	Print vm messages on console
+product	Trace/GC	PrintGCApplicationConcurrentTime	bool	false	Print the time the application has been running
+product	Trace/GC	PrintGCApplicationStoppedTime	bool	false	Print the time the application has been stopped
+notproduct	Exceptions	ErrorHandlerTest	uintx	0	If > 0, provokes an error after VM initialization; the valuedetermines which error to provoke.  See test_error_handler()in debug.cpp.
+develop	Trace	Verbose	bool	false	Prints additional debugging information from other modes
+develop	Trace	PrintMiscellaneous	bool	false	Prints uncategorized debugging information (requires +Verbose)
+develop	Trace	WizardMode	bool	false	Prints much more debugging information
+product	Exceptions	ShowMessageBoxOnError	bool	false	Keep process alive on VM fatal error
+product	Trace	CreateMinidumpOnCrash	bool	false	Create minidump on VM fatal error
+product_pd	Exceptions	UseOSErrorReporting	bool	\	Let VM fatal error propagate to the OS (ie. WER on Windows)
+product	Exceptions	SuppressFatalErrorMessage	bool	false	Do NO Fatal Error report [Avoid deadlock]
+product	Exceptions	OnError	ccstrlist		Run user-defined commands on fatal error; see VMError.cpp for examples
+product	GC/Exceptions	OnOutOfMemoryError	ccstrlist		Run user-defined commands on first java.lang.OutOfMemoryError
+manageable	GC	HeapDumpBeforeFullGC	bool	false	Dump heap to file before any major stop-world GC
+manageable	GC	HeapDumpAfterFullGC	bool	false	Dump heap to file after any major stop-world GC
+manageable	GC/Exceptions	HeapDumpOnOutOfMemoryError	bool	false	Dump heap to file when java.lang.OutOfMemoryError is thrown
+manageable	Memory	HeapDumpPath	ccstr	NULL	When HeapDumpOnOutOfMemoryError is on, the path (filename ordirectory) of the dump file (defaults to java_pid<pid>.hprofin the working directory)
+develop	Memory	SegmentedHeapDumpThreshold	uintx	2*G	Generate a segmented heap dump (JAVA PROFILE 1.0.2 format) when the heap usage is larger than this
+develop	Memory	HeapDumpSegmentSize	uintx	1*G	Approximate segment size when generating a segmented heap dump
+develop	Trace	BreakAtWarning	bool	false	Execute breakpoint upon encountering VM warning
+product_pd	Exceptions	UseVectoredExceptions	bool	\	Temp Flag - Use Vectored Exceptions rather than SEH (Windows Only)
+develop	Trace	TraceVMOperation	bool	false	Trace vm operations
+develop	Misc	UseFakeTimers	bool	false	Tells whether the VM should use system time or a fake timer
+diagnostic	Trace/JIT	LogCompilation	bool	false	Log compilation activity in detail to hotspot.log or LogFile
+product	Trace	PrintCompilation	bool	false	Print compilations
+diagnostic	Trace	TraceNMethodInstalls	bool	false	Trace nmethod intallation
+diagnostic	JIT	ScavengeRootsInCode	intx	2	0: do not allow scavengable oops in the code cache; 1: allow scavenging from the code cache; 2: emit as many constants as the compiler can see
+diagnostic	Trace	TraceOSRBreakpoint	bool	false	Trace OSR Breakpoint 
+diagnostic	Trace	TraceCompileTriggered	bool	false	Trace compile triggered
+diagnostic	Trace	TraceTriggers	bool	false	Trace triggers
+product	CPU	AlwaysRestoreFPU	bool	false	Restore the FPU control word after every JNI call (expensive)
+diagnostic	Trace	PrintCompilation2	bool	false	Print additional statistics per compilation
+diagnostic	Trace	PrintAdapterHandlers	bool	false	Print code generated for i2c/c2i adapters
+develop	Verify	VerifyAdapterSharing	bool	false	Verify that the code for shared adapters is the equivalent
+diagnostic	Trace	PrintAssembly	bool	false	Print assembly code (using external disassembler.so)
+diagnostic	Trace	PrintAssemblyOptions	ccstr	NULL	Options string passed to disassembler.so
+diagnostic	Trace	PrintNMethods	bool	false	Print assembly code for nmethods when generated
+diagnostic	Trace	PrintNativeNMethods	bool	false	Print assembly code for native nmethods when generated
+develop	Trace	PrintDebugInfo	bool	false	Print debug information for all nmethods when generated
+develop	Trace	PrintRelocations	bool	false	Print relocation information for all nmethods when generated
+develop	Trace	PrintDependencies	bool	false	Print dependency information for all nmethods when generated
+develop	Trace/Exceptions	PrintExceptionHandlers	bool	false	Print exception handler tables for all nmethods when generated
+develop	Exceptions	InterceptOSException	bool	false	Starts debugger when an implicit OS (e.g., NULL) exception happens
+notproduct	Trace	PrintCodeCache	bool	false	Print the compiled_code cache when exiting
+develop	Trace	PrintCodeCache2	bool	false	Print detailed info on the compiled_code cache when exiting
+diagnostic	Trace	PrintStubCode	bool	false	Print generated stub code
+product	Exceptions	StackTraceInThrowable	bool	true	Collect backtrace in throwable when exception happens
+product	JIT	OmitStackTraceInFastThrow	bool	true	Omit backtraces for some 'hot' exceptions in optimized code
+product	Trace	ProfilerPrintByteCodeStatistics	bool	false	Prints byte code statictics when dumping profiler output
+product	Trace	ProfilerRecordPC	bool	false	Collects tick for each 16 byte interval of compiled code
+product	Trace	ProfileVM	bool	false	Profiles ticks that fall within VM (either in the VM Thread or VM code called through stubs)
+product	Trace	ProfileIntervals	bool	false	Prints profiles for each interval (see ProfileIntervalsTicks)
+notproduct	Trace	ProfilerCheckIntervals	bool	false	Collect and print info on spacing of profiler ticks
+develop	Trace	PrintJVMWarnings	bool	false	Prints warnings for unimplemented JVM functions
+product	Trace	PrintWarnings	bool	true	Prints JVM warnings to output stream
+notproduct	Misc	WarnOnStalledSpinLock	uintx	0	Prints warnings for stalled SpinLocks
+develop	Java Language	InitializeJavaLangSystem	bool	true	Initialize java.lang.System - turn off for individual method debugging
+develop	String	InitializeJavaLangString	bool	true	Initialize java.lang.String - turn off for individual method debugging
+develop	Exceptions	InitializeJavaLangExceptionsErrors	bool	true	Initialize various error and exception classes - turn off for individual method debugging
+product	Misc	RegisterFinalizersAtInit	bool	true	Register finalizable objects at end of Object.<init> or after allocation
+develop	Misc	RegisterReferences	bool	true	Tells whether the VM should register soft/weak/final/phantom references
+develop	Misc	IgnoreRewrites	bool	false	Supress rewrites of bytecodes in the oopmap generator. This is unsafe!
+develop	Trace	PrintCodeCacheExtension	bool	false	Print extension of code cache
+develop	Misc	UsePrivilegedStack	bool	true	Enable the security JVM functions
+develop	CPU	IEEEPrecision	bool	true	Enables IEEE precision (for INTEL only)
+develop	Misc	ProtectionDomainVerification	bool	true	Verifies protection domain before resolution in system dictionary
+product	ClassLoading	ClassUnloading	bool	true	Do unloading of classes
+diagnostic	Misc	LinkWellKnownClasses	bool	false	Resolve a well known class as soon as its name is seen
+develop	Mult-Threads	DisableStartThread	bool	false	Disable starting of additional Java threads (for debugging only)
+develop	Misc	MemProfiling	bool	false	Write memory usage profiling to log file
+notproduct	Trace	PrintSystemDictionaryAtExit	bool	false	Prints the system dictionary at exit
+experimental	Misc	PredictedLoadedClassCount	intx	0	Experimental: Tune loaded class cache starting size.
+diagnostic	Mult-Threads	UnsyncloadClass	bool	false	Unstable: VM calls loadClass unsynchronized. Custom class loader  must call VM synchronized for findClass and defineClass.
+product	ClassLoading	AlwaysLockClassLoader	bool	false	Require the VM to acquire the class loader lock before calling loadClass() even for class loaders registering as parallel capable
+product	ClassLoading	AllowParallelDefineClass	bool	false	Allow parallel defineClass requests for class loaders registering as parallel capable
+product	ClassLoading	MustCallLoadClassInternal	bool	false	Call loadClassInternal() rather than loadClass()
+product_pd	Mult-Threads	DontYieldALot	bool	\	Throw away obvious excess yield calls (for SOLARIS only)
+product_pd	Mult-Threads	ConvertSleepToYield	bool	\	Converts sleep(0) to thread yield (may be off for SOLARIS to improve GUI)
+product	Mult-Threads	ConvertYieldToSleep	bool	false	Converts yield to a sleep of MinSleepInterval to simulate Win32 behavior (SOLARIS only)
+product	Mult-Threads	UseBoundThreads	bool	true	Bind user level threads to kernel threads (for SOLARIS only)
+develop	Mult-Threads	UseDetachedThreads	bool	true	Use detached threads that are recycled upon termination (for SOLARIS only)
+product	Mult-Threads	UseLWPSynchronization	bool	true	Use LWP-based instead of libthread-based synchronization (SPARC only)
+product	Mult-Threads	SyncKnobs	ccstr	NULL	(Unstable) Various monitor synchronization tunables
+product	Mult-Threads	EmitSync	intx	0	(Unsafe,Unstable)  Controls emission of inline sync fast-path code
+product	Misc	AlwaysInflate	intx	0	(Unstable) Force inflation
+product	Mult-Threads	MonitorBound	intx	0	Bound Monitor population
+product	Mult-Threads	MonitorInUseLists	bool	false	Track Monitors for Deflation
+product	Mult-Threads	Atomics	intx	0	(Unsafe,Unstable) Diagnostic - Controls emission of atomics
+product	CPU	FenceInstruction	intx	0	(Unsafe,Unstable) Experimental
+product	Mult-Threads	SyncFlags	intx	0	(Unsafe,Unstable) Experimental Sync flags
+product	Mult-Threads	SyncVerbose	intx	0	(Unstable)
+product	CPU	ClearFPUAtPark	intx	0	(Unsafe,Unstable)
+product	Java Language	hashCode	intx	0	(Unstable) select hashCode generation algorithm
+product	OS/Mult-Threads	WorkAroundNPTLTimedWaitHang	intx	1	(Unstable, Linux-specific) avoid NPTL-FUTEX hang pthread_cond_timedwait
+product	OS	FilterSpuriousWakeups	bool	true	Prevent spurious or premature wakeups from object.wait (Solaris only)
+product	JNI	NativeMonitorTimeout	intx	-1	(Unstable)
+product	JNI	NativeMonitorFlags	intx	0	(Unstable)
+product	JNI	NativeMonitorSpinLimit	intx	20	(Unstable)
+develop	Mult-Threads	UsePthreads	bool	false	Use pthread-based instead of libthread-based synchronization (SPARC only)
+product	OS	AdjustConcurrency	bool	false	call thr_setconcurrency at thread create time to avoid LWP starvation on MP systems (For Solaris Only)
+develop	Exceptions	UpdateHotSpotCompilerFileOnError	bool	true	Should the system attempt to update the compiler file when an error occurs?
+product	OS	ReduceSignalUsage	bool	false	Reduce the use of OS signals in Java and/or the VM
+notproduct	GC	ValidateMarkSweep	bool	false	Do extra validation during MarkSweep collection
+notproduct	GC	RecordMarkSweepCompaction	bool	false	Enable GC-to-GC recording and querying of compaction during MarkSweep
+develop_pd	Misc	ShareVtableStubs	bool	\	Share vtable stubs (smaller code but worse branch prediction
+develop	ClassLoading	LoadLineNumberTables	bool	true	Tells whether the class file parser loads line number tables
+develop	ClassLoading	LoadLocalVariableTables	bool	true	Tells whether the class file parser loads local variable tables
+develop	ClassLoading	LoadLocalVariableTypeTables	bool	true	Tells whether the class file parser loads local variable type tables
+product	OS	AllowUserSignalHandlers	bool	false	Do not complain if the application installs signal handlers (Solaris & Linux only)
+product	OS	UseSignalChaining	bool	true	Use signal-chaining to invoke signal handlers installed by the application (Solaris & Linux only)
+product	OS	UseAltSigs	bool	false	Use alternate signals instead of SIGUSR1 & SIGUSR2 for VM internal signals (Solaris only)
+product	Mult-Threads	UseSpinning	bool	false	Use spinning in monitor inflation and before entry
+product	Mult-Threads	PreSpinYield	bool	false	Yield before inner spinning loop
+product	Mult-Threads	PostSpinYield	bool	true	Yield after inner spinning loop
+product	JNI	AllowJNIEnvProxy	bool	false	Allow JNIEnv proxies for jdbx
+product	JNI	JNIDetachReleasesMonitors	bool	true	JNI DetachCurrentThread releases monitors owned by thread
+product	JNI	RestoreMXCSROnJNICalls	bool	false	Restore MXCSR when returning from JNI calls
+product	JNI	CheckJNICalls	bool	false	Verify all arguments to JNI calls
+product	JNI	UseFastJNIAccessors	bool	true	Use optimized versions of Get<Primitive>Field
+product	Misc	EagerXrunInit	bool	false	Eagerly initialize -Xrun libraries; allows startup profiling,  but not all -Xrun libraries may support the state of the VM at this time
+product	Misc	PreserveAllAnnotations	bool	false	Preserve RuntimeInvisibleAnnotations as well as RuntimeVisibleAnnotations
+develop	GC/Exceptions	PreallocatedOutOfMemoryErrorCount	uintx	4	Number of OutOfMemoryErrors preallocated with backtrace
+product	ClassLoading	LazyBootClassLoader	bool	true	Enable/disable lazy opening of boot class path entries
+diagnostic	CPU	UseIncDec	bool	true	Use INC, DEC instructions on x86
+product	JIT	UseNewLongLShift	bool	false	Use optimized bitwise shift left
+product	CPU	UseStoreImmI16	bool	true	Use store immediate 16-bits value instruction on x86
+product	CPU	UseAddressNop	bool	false	Use '0F 1F [addr]' NOP instructions on x86 cpus
+product	CPU	UseXmmLoadAndClearUpper	bool	true	Load low part of XMM register and clear upper part
+product	CPU	UseXmmRegToRegMoveAll	bool	false	Copy all XMM register bits when moving value between registers
+product	CPU	UseXmmI2D	bool	false	Use SSE2 CVTDQ2PD instruction to convert Integer to Double
+product	CPU	UseXmmI2F	bool	false	Use SSE2 CVTDQ2PS instruction to convert Integer to Float
+product	CPU	UseXMMForArrayCopy	bool	false	Use SSE2 MOVQ instruction for Arraycopy
+product	CPU	UseUnalignedLoadStores	bool	false	Use SSE2 MOVDQU instruction for Arraycopy
+product	CPU	UseCBCond	bool	false	Use compare and branch instruction on SPARC
+product	Memory	FieldsAllocationStyle	intx	1	0 - type based with oops first, 1 - with oops last, 2 - oops in super and sub classes are together
+product	Memory	CompactFields	bool	true	Allocate nonstatic fields in gaps between previous fields
+notproduct	Trace	PrintCompactFieldsSavings	bool	false	Print how many words were saved with CompactFields
+product	Mult-Threads	UseBiasedLocking	bool	true	Enable biased locking in JVM
+product	Mult-Threads	BiasedLockingStartupDelay	intx	4000	Number of milliseconds to wait before enabling biased locking
+diagnostic	Trace	PrintBiasedLockingStatistics	bool	false	Print statistics of biased locking in JVM
+product	Mult-Threads	BiasedLockingBulkRebiasThreshold	intx	20	Threshold of number of revocations per type to try to rebias all objects in the heap of that type
+product	Mult-Threads	BiasedLockingBulkRevokeThreshold	intx	40	Threshold of number of revocations per type to permanently revoke biases of all objects in the heap of that type
+product	Mult-Threads	BiasedLockingDecayTime	intx	25000	Decay time (in milliseconds) to re-enable bulk rebiasing of a type after previous bulk rebias
+develop	Memory	JavaObjectsInPerm	bool	false	controls whether Classes and interned Strings are allocated in perm.  This purely intended to allow debugging issuesin production.
+notproduct	Trace	TraceRuntimeCalls	bool	false	Trace run-time calls
+develop	JNI	TraceJNICalls	bool	false	Trace JNI calls
+notproduct	Trace	TraceJVMCalls	bool	false	Trace JVM calls
+product	Trace	TraceJVMTI	ccstr	NULL	Trace flags for JVMTI functions and events
+product	ClassLoading	StressLdcRewrite	bool	false	Force ldc -> ldc_w rewrite during RedefineClasses
+product	Trace	TraceRedefineClasses	intx	0	Trace level for JVMTI RedefineClasses
+develop	Misc	StressMethodComparator	bool	false	run the MethodComparator on all loaded methods
+product	Verify	VerifyMergedCPBytecodes	bool	true	Verify bytecodes after RedefineClasses constant pool merging
+develop	Trace/JNI	TraceJNIHandleAllocation	bool	false	Trace allocation/deallocation of JNI handle blocks
+develop	Trace	TraceThreadEvents	bool	false	Trace all thread events
+develop	Trace	TraceBytecodes	bool	false	Trace bytecode execution
+develop	Trace	TraceClassInitialization	bool	false	Trace class initialization
+develop	Trace/Exceptions	TraceExceptions	bool	false	Trace exceptions
+develop	Trace	TraceICs	bool	false	Trace inline cache changes
+notproduct	Trace	TraceInvocationCounterOverflow	bool	false	Trace method invocation counter overflow
+develop	Trace	TraceInlineCacheClearing	bool	false	Trace clearing of inline caches in nmethods
+develop	Trace	TraceDependencies	bool	false	Trace dependencies
+develop	Verify	VerifyDependencies	bool	trueInDebug	Exercise and verify the compilation dependency mechanism
+develop	Trace	TraceNewOopMapGeneration	bool	false	Trace OopMapGeneration
+develop	Trace	TraceNewOopMapGenerationDetailed	bool	false	Trace OopMapGeneration: print detailed cell states
+develop	JIT	TimeOopMap	bool	false	Time calls to GenerateOopMap::compute_map() in sum
+develop	JIT	TimeOopMap2	bool	false	Time calls to GenerateOopMap::compute_map() individually
+develop	Trace	TraceMonitorMismatch	bool	false	Trace monitor matching failures during OopMapGeneration
+develop	Trace	TraceOopMapRewrites	bool	false	Trace rewritting of method oops during oop map generation
+develop	Trace	TraceSafepoint	bool	false	Trace safepoint operations
+develop	Trace	TraceICBuffer	bool	false	Trace usage of IC buffer
+develop	Trace	TraceCompiledIC	bool	false	Trace changes of compiled IC
+notproduct	Trace	TraceZapDeadLocals	bool	false	Trace zapping dead locals
+develop	Trace	TraceStartupTime	bool	false	Trace setup time
+product	Misc	HPILibPath	ccstr	NULL	Specify alternate path to HPI library
+develop	Trace	TraceProtectionDomainVerification	bool	false	Trace protection domain verifcation
+develop	Trace/Exceptions	TraceClearedExceptions	bool	false	Prints when an exception is forcibly cleared
+product	Trace	TraceClassResolution	bool	false	Trace all constant pool resolutions (for debugging)
+product	Trace	TraceBiasedLocking	bool	false	Trace biased locking in JVM
+product	Trace	TraceMonitorInflation	bool	false	Trace monitor inflation in JVM
+product	CPU	Use486InstrsOnly	bool	false	Use 80486 Compliant instruction subset
+product	GC	UseSerialGC	bool	false	Use the serial garbage collector
+product	GC	UseG1GC	bool	false	Use the Garbage-First garbage collector
+product	GC Parallel	UseParallelGC	bool	false	Use the Parallel Scavenge garbage collector
+product	GC Parallel	UseParallelOldGC	bool	false	Use the Parallel Old garbage collector
+product	Memory	HeapMaximumCompactionInterval	uintx	20	How often should we maximally compact the heap (not allowing any dead space)
+product	Memory	HeapFirstMaximumCompactionCount	uintx	3	The collection count for the first maximum compaction
+product	GC	UseMaximumCompactionOnSystemGC	bool	true	In the Parallel Old garbage collector maximum compaction for a system GC
+product	GC	ParallelOldDeadWoodLimiterMean	uintx	50	The mean used by the par compact dead woodlimiter (a number between 0-100).
+product	GC	ParallelOldDeadWoodLimiterStdDev	uintx	80	The standard deviation used by the par compact dead woodlimiter (a number between 0-100).
+product	GC Parallel	ParallelGCThreads	uintx	0	Number of parallel threads parallel gc will use
+product	GC Parallel	UseDynamicNumberOfGCThreads	bool	false	Dynamically choose the number of parallel threads parallel gc will use
+diagnostic	GC Parallel	ForceDynamicNumberOfGCThreads	bool	false	Force dynamic selection of the number ofparallel threads parallel gc will use to aid debugging
+product	GC	HeapSizePerGCThread	uintx	ScaleForWordSize(64*M)	Size of heap (bytes) per GC thread used in calculating the number of GC threads
+product	Trace/GC	TraceDynamicGCThreads	bool	false	Trace the dynamic GC thread usage
+develop	GC Parallel	ParallelOldGCSplitALot	bool	false	Provoke splitting (copying data from a young gen space tomultiple destination spaces)
+develop	GC Parallel	ParallelOldGCSplitInterval	uintx	3	How often to provoke splitting a young gen space
+develop	Trace	TraceRegionTasksQueuing	bool	false	Trace the queuing of the region tasks
+product	GC	ConcGCThreads	uintx	0	Number of threads concurrent gc will use
+product	Memory	YoungPLABSize	uintx	4096	Size of young gen promotion labs (in HeapWords)
+product	Memory	OldPLABSize	uintx	1024	Size of old gen promotion labs (in HeapWords)
+product	GC	GCTaskTimeStampEntries	uintx	200	Number of time stamp entries per gc worker thread
+product	Memory	AlwaysTenure	bool	false	Always tenure objects in eden. (ParallelGC only)
+product	Memory	NeverTenure	bool	false	Never tenure objects in eden, May tenure on overflow (ParallelGC only)
+product	GC	ScavengeBeforeFullGC	bool	true	Scavenge youngest generation before each full GC, used with UseParallelGC
+develop	GC	ScavengeWithObjectsInToSpace	bool	false	Allow scavenges to occur when to_space contains objects.
+product	GC	UseConcMarkSweepGC	bool	false	Use Concurrent Mark-Sweep GC in the old generation
+product	GC	ExplicitGCInvokesConcurrent	bool	false	A System.gc() request invokes a concurrent collection; (effective only when UseConcMarkSweepGC)
+product	GC	ExplicitGCInvokesConcurrentAndUnloadsClasses	bool	false	A System.gc() request invokes a concurrent collection and also unloads classes during such a concurrent gc cycle (effective only when UseConcMarkSweepGC)
+product	GC	GCLockerInvokesConcurrent	bool	false	The exit of a JNI CS necessitating a scavenge also kicks off a bkgrd concurrent collection
+product	GC	GCLockerEdenExpansionPercent	uintx	5	How much the GC can expand the eden by while the GC locker  is active (as a percentage)
+develop	GC CMS	UseCMSAdaptiveFreeLists	bool	true	Use Adaptive Free Lists in the CMS generation
+develop	GC CMS	UseAsyncConcMarkSweepGC	bool	true	Use Asynchronous Concurrent Mark-Sweep GC in the old generation
+develop	GC CMS	RotateCMSCollectionTypes	bool	false	Rotate the CMS collections among concurrent and STW
+product	GC CMS	UseCMSBestFit	bool	true	Use CMS best fit allocation strategy
+product	GC CMS	UseCMSCollectionPassing	bool	true	Use passing of collection from background to foreground
+product	GC	UseParNewGC	bool	false	Use parallel threads in the new generation.
+product	GC Parallel	ParallelGCVerbose	bool	false	Verbose output for parallel GC.
+product	GC Parallel	ParallelGCBufferWastePct	intx	10	wasted fraction of parallel allocation buffer.
+diagnostic	GC Parallel	ParallelGCRetainPLAB	bool	false	Retain parallel allocation buffers across scavenges;  -- disabled because this currently conflicts with  parallel card scanning under certain conditions 
+product	Memory	TargetPLABWastePct	intx	10	target wasted space in last buffer as pct of overall allocation
+product	Memory	PLABWeight	uintx	75	Percentage (0-100) used to weight the current sample whencomputing exponentially decaying average for ResizePLAB.
+product	Memory	ResizePLAB	bool	true	Dynamically resize (survivor space) promotion labs
+product	Trace	PrintPLAB	bool	false	Print (survivor space) promotion labs sizing decisions
+product	GC Parallel	ParGCArrayScanChunk	intx	50	Scan a subset and push remainder, if array is bigger than this
+product	GC Parallel	ParGCUseLocalOverflow	bool	false	Instead of a global overflow list, use local overflow stacks
+product	GC Parallel	ParGCTrimOverflow	bool	true	Eagerly trim the local overflow lists (when ParGCUseLocalOverflow
+notproduct	GC Parallel	ParGCWorkQueueOverflowALot	bool	false	Whether we should simulate work queue overflow in ParNew
+notproduct	GC Parallel	ParGCWorkQueueOverflowInterval	uintx	1000	An 'interval' counter that determines how frequently we simulate overflow; a smaller number increases frequency
+product	GC Parallel	ParGCDesiredObjsFromOverflowList	uintx	20	The desired number of objects to claim from the overflow list
+diagnostic	GC Parallel	ParGCStridesPerThread	uintx	2	The number of strides per worker thread that we divide up the card table scanning work into
+diagnostic	GC Parallel	ParGCCardsPerStrideChunk	intx	256	The number of cards in each chunk of the parallel chunks used during card table scanning
+product	GC CMS	CMSParPromoteBlocksToClaim	uintx	16	Number of blocks to attempt to claim when refilling CMS LAB for parallel GC.
+product	Memory	OldPLABWeight	uintx	50	Percentage (0-100) used to weight the current sample whencomputing exponentially decaying average for resizing CMSParPromoteBlocksToClaim.
+product	Memory	ResizeOldPLAB	bool	true	Dynamically resize (old gen) promotion labs
+product	Trace	PrintOldPLAB	bool	false	Print (old gen) promotion labs sizing decisions
+product	GC CMS	CMSOldPLABMin	uintx	16	Min size of CMS gen promotion lab caches per worker per blksize
+product	GC CMS	CMSOldPLABMax	uintx	1024	Max size of CMS gen promotion lab caches per worker per blksize
+product	GC CMS	CMSOldPLABNumRefills	uintx	4	Nominal number of refills of CMS gen promotion lab cache per worker per block size
+product	GC CMS	CMSOldPLABResizeQuicker	bool	false	Whether to react on-the-fly during a scavenge to a sudden change in block demand rate
+product	GC CMS	CMSOldPLABToleranceFactor	uintx	4	The tolerance of the phase-change detector for on-the-fly PLAB resizing during a scavenge
+product	GC CMS	CMSOldPLABReactivityFactor	uintx	2	The gain in the feedback loop for on-the-fly PLAB resizing during a scavenge
+product	GC CMS	CMSOldPLABReactivityCeiling	uintx	10	The clamping of the gain in the feedback loop for on-the-fly PLAB resizing during a scavenge
+product	Misc	AlwaysPreTouch	bool	false	It forces all freshly committed pages to be pre-touched.
+product_pd	GC CMS	CMSYoungGenPerWorker	intx	\	The maximum size of young gen chosen by default per GC worker thread available
+product	GC	GCOverheadReporting	bool	false	Enables the GC overhead reporting facility
+product	GC	GCOverheadReportingPeriodMS	intx	100	Reporting period for conc GC overhead reporting, in ms 
+product	GC CMS	CMSIncrementalMode	bool	false	Whether CMS GC should operate in \incremental\ mode
+product	GC CMS	CMSIncrementalDutyCycle	uintx	10	CMS incremental mode duty cycle (a percentage, 0-100).  IfCMSIncrementalPacing is enabled, then this is just the initialvalue
+product	GC CMS	CMSIncrementalPacing	bool	true	Whether the CMS incremental mode duty cycle should be automatically adjusted
+product	GC CMS	CMSIncrementalDutyCycleMin	uintx	0	Lower bound on the duty cycle when CMSIncrementalPacing is enabled (a percentage, 0-100)
+product	GC CMS	CMSIncrementalSafetyFactor	uintx	10	Percentage (0-100) used to add conservatism when computing the duty cycle
+product	GC CMS	CMSIncrementalOffset	uintx	0	Percentage (0-100) by which the CMS incremental mode duty cycle is shifted to the right within the period between young GCs
+product	GC CMS	CMSExpAvgFactor	uintx	50	Percentage (0-100) used to weight the current sample whencomputing exponential averages for CMS statistics.
+product	GC CMS	CMS_FLSWeight	uintx	75	Percentage (0-100) used to weight the current sample whencomputing exponentially decating averages for CMS FLS statistics.
+product	GC CMS	CMS_FLSPadding	uintx	1	The multiple of deviation from mean to use for bufferingagainst volatility in free list demand.
+product	GC CMS	FLSCoalescePolicy	uintx	2	CMS: Aggression level for coalescing, increasing from 0 to 4
+product	GC CMS	FLSAlwaysCoalesceLarge	bool	false	CMS: Larger free blocks are always available for coalescing
+product	GC CMS	FLSLargestBlockCoalesceProximity	double	0.99	CMS: the smaller the percentage the greater the coalition force
+product	GC CMS	CMSSmallCoalSurplusPercent	double	1.05	CMS: the factor by which to inflate estimated demand of small block sizes to prevent coalescing with an adjoining block
+product	GC CMS	CMSLargeCoalSurplusPercent	double	0.95	CMS: the factor by which to inflate estimated demand of large block sizes to prevent coalescing with an adjoining block
+product	GC CMS	CMSSmallSplitSurplusPercent	double	1.10	CMS: the factor by which to inflate estimated demand of small block sizes to prevent splitting to supply demand for smaller blocks
+product	GC CMS	CMSLargeSplitSurplusPercent	double	1.00	CMS: the factor by which to inflate estimated demand of large block sizes to prevent splitting to supply demand for smaller blocks
+product	GC CMS	CMSExtrapolateSweep	bool	false	CMS: cushion for block demand during sweep
+product	GC CMS	CMS_SweepWeight	uintx	75	Percentage (0-100) used to weight the current sample when computing exponentially decaying average for inter-sweep duration
+product	GC CMS	CMS_SweepPadding	uintx	1	The multiple of deviation from mean to use for buffering against volatility in inter-sweep duration.
+product	GC CMS	CMS_SweepTimerThresholdMillis	uintx	10	Skip block flux-rate sampling for an epoch unless inter-sweep duration exceeds this threhold in milliseconds
+develop	GC CMS	CMSTraceIncrementalMode	bool	false	Trace CMS incremental mode
+develop	GC CMS	CMSTraceIncrementalPacing	bool	false	Trace CMS incremental mode pacing computation
+develop	GC CMS	CMSTraceThreadState	bool	false	Trace the CMS thread state (enable the trace_state() method)
+product	GC CMS	CMSClassUnloadingEnabled	bool	false	Whether class unloading enabled when using CMS GC
+product	GC CMS	CMSClassUnloadingMaxInterval	uintx	0	When CMS class unloading is enabled, the maximum CMS cycle count for which classes may not be unloaded
+product	GC CMS	CMSCompactWhenClearAllSoftRefs	bool	true	Compact when asked to collect CMS gen with clear_all_soft_refs
+product	GC CMS	UseCMSCompactAtFullCollection	bool	true	Use mark sweep compact at full collections
+product	GC CMS	CMSFullGCsBeforeCompaction	uintx	0	Number of CMS full collection done before compaction if > 0
+develop	GC CMS	CMSDictionaryChoice	intx	0	Use BinaryTreeDictionary as default in the CMS generation
+product	GC CMS	CMSIndexedFreeListReplenish	uintx	4	Replenish an indexed free list with this number of chunks
+product	GC CMS	CMSReplenishIntermediate	bool	true	Replenish all intermediate free-list caches
+product	GC CMS	CMSSplitIndexedFreeListBlocks	bool	true	When satisfying batched demand, split blocks from the IndexedFreeList whose size is a multiple of requested size
+product	GC CMS	CMSLoopWarn	bool	false	Warn in case of excessive CMS looping
+develop	GC CMS	CMSOverflowEarlyRestoration	bool	false	Whether preserved marks should be restored early
+product	Memory	MarkStackSize	uintx	NOT_LP64(32*K) LP64_ONLY(4*M)	Size of marking stack
+product	Memory	MarkStackSizeMax	uintx	NOT_LP64(4*M) LP64_ONLY(512*M)	Max size of marking stack
+notproduct	GC CMS	CMSMarkStackOverflowALot	bool	false	Whether we should simulate frequent marking stack / work queue overflow
+notproduct	GC CMS	CMSMarkStackOverflowInterval	uintx	1000	An `interval' counter that determines how frequently we simulate overflow; a smaller number increases frequency
+product	GC CMS	CMSMaxAbortablePrecleanLoops	uintx	0	(Temporary, subject to experimentation)Maximum number of abortable preclean iterations, if > 0
+product	GC CMS	CMSMaxAbortablePrecleanTime	intx	5000	(Temporary, subject to experimentation)Maximum time in abortable preclean in ms
+product	GC CMS	CMSAbortablePrecleanMinWorkPerIteration	uintx	100	(Temporary, subject to experimentation)Nominal minimum work per abortable preclean iteration
+manageable	GC CMS	CMSAbortablePrecleanWaitMillis	intx	100	(Temporary, subject to experimentation) Time that we sleep between iterations when not given enough work per iteration
+product	GC CMS	CMSRescanMultiple	uintx	32	Size (in cards) of CMS parallel rescan task
+product	GC CMS	CMSConcMarkMultiple	uintx	32	Size (in cards) of CMS concurrent MT marking task
+product	GC CMS	CMSRevisitStackSize	uintx	1*M	Size of CMS KlassKlass revisit stack
+product	GC CMS	CMSAbortSemantics	bool	false	Whether abort-on-overflow semantics is implemented
+product	GC CMS	CMSParallelRemarkEnabled	bool	true	Whether parallel remark enabled (only if ParNewGC)
+product	GC CMS	CMSParallelSurvivorRemarkEnabled	bool	true	Whether parallel remark of survivor space enabled (effective only if CMSParallelRemarkEnabled)
+product	GC CMS	CMSPLABRecordAlways	bool	true	Whether to always record survivor space PLAB bdries (effective only if CMSParallelSurvivorRemarkEnabled)
+product	GC CMS	CMSConcurrentMTEnabled	bool	true	Whether multi-threaded concurrent work enabled (if ParNewGC)
+product	GC CMS	CMSPermGenPrecleaningEnabled	bool	true	Whether concurrent precleaning enabled in perm gen (effective only when CMSPrecleaningEnabled is true)
+product	GC CMS	CMSPrecleaningEnabled	bool	true	Whether concurrent precleaning enabled
+product	GC CMS	CMSPrecleanIter	uintx	3	Maximum number of precleaning iteration passes
+product	GC CMS	CMSPrecleanNumerator	uintx	2	CMSPrecleanNumerator:CMSPrecleanDenominator yields convergence ratio
+product	GC CMS	CMSPrecleanDenominator	uintx	3	CMSPrecleanNumerator:CMSPrecleanDenominator yields convergence ratio
+product	GC CMS	CMSPrecleanRefLists1	bool	true	Preclean ref lists during (initial) preclean phase
+product	GC CMS	CMSPrecleanRefLists2	bool	false	Preclean ref lists during abortable preclean phase
+product	GC CMS	CMSPrecleanSurvivors1	bool	false	Preclean survivors during (initial) preclean phase
+product	GC CMS	CMSPrecleanSurvivors2	bool	true	Preclean survivors during abortable preclean phase
+product	GC CMS	CMSPrecleanThreshold	uintx	1000	Don't re-iterate if #dirty cards less than this
+product	GC CMS	CMSCleanOnEnter	bool	true	Clean-on-enter optimization for reducing number of dirty cards
+product	GC CMS	CMSRemarkVerifyVariant	uintx	1	Choose variant (1,2) of verification following remark
+product	GC CMS	CMSScheduleRemarkEdenSizeThreshold	uintx	2*M	If Eden used is below this value, don't try to schedule remark
+product	GC CMS	CMSScheduleRemarkEdenPenetration	uintx	50	The Eden occupancy % at which to try and schedule remark pause
+product	GC CMS	CMSScheduleRemarkSamplingRatio	uintx	5	Start sampling Eden top at least before yg occupancy reaches 1/<ratio> of the size at which we plan to schedule remark
+product	GC CMS	CMSSamplingGrain	uintx	16*K	The minimum distance between eden samples for CMS (see above)
+product	GC CMS	CMSScavengeBeforeRemark	bool	false	Attempt scavenge before the CMS remark step
+develop	GC CMS	CMSTraceSweeper	bool	false	Trace some actions of the CMS sweeper
+product	GC CMS	CMSWorkQueueDrainThreshold	uintx	10	Don't drain below this size per parallel worker/thief
+manageable	GC CMS	CMSWaitDuration	intx	2000	Time in milliseconds that CMS thread waits for young GC
+product	GC CMS	CMSYield	bool	true	Yield between steps of concurrent mark & sweep
+product	GC CMS	CMSBitMapYieldQuantum	uintx	10*M	Bitmap operations should process at most this many bitsbetween yields
+product	GC CMS	CMSDumpAtPromotionFailure	bool	false	Dump useful information about the state of the CMS old  generation upon a promotion failure.
+product	GC CMS	CMSPrintChunksInDump	bool	false	In a dump enabled by CMSDumpAtPromotionFailure, include  more detailed information about the free chunks.
+product	GC CMS	CMSPrintObjectsInDump	bool	false	In a dump enabled by CMSDumpAtPromotionFailure, include  more detailed information about the allocated objects.
+diagnostic	Memory	FLSVerifyAllHeapReferences	bool	false	Verify that all refs across the FLS boundary  are to valid objects
+diagnostic	CPU	FLSVerifyLists	bool	false	Do lots of (expensive) FreeListSpace verification
+diagnostic	CPU	FLSVerifyIndexTable	bool	false	Do lots of (expensive) FLS index table verification
+develop	CPU	FLSVerifyDictionary	bool	false	Do lots of (expensive) FLS dictionary verification
+develop	Verify	VerifyBlockOffsetArray	bool	false	Do (expensive!) block offset array verification
+diagnostic	Misc	BlockOffsetArrayUseUnallocatedBlock	bool	false	Maintain _unallocated_block in BlockOffsetArray (currently applicable only to CMS collector)
+develop	Trace/GC CMS	TraceCMSState	bool	false	Trace the state of the CMS collection
+product	Misc	RefDiscoveryPolicy	intx	0	Whether reference-based(0) or referent-based(1)
+product	Misc	ParallelRefProcEnabled	bool	false	Enable parallel reference processing whenever possible
+product	Misc	ParallelRefProcBalancingEnabled	bool	true	Enable balancing of reference processing queues
+product	GC CMS	CMSTriggerRatio	intx	80	Percentage of MinHeapFreeRatio in CMS generation that is allocated before a CMS collection cycle commences
+product	GC CMS	CMSTriggerPermRatio	intx	80	Percentage of MinHeapFreeRatio in the CMS perm generation that is allocated before a CMS collection cycle commences, that also collects the perm generation
+product	GC CMS	CMSBootstrapOccupancy	uintx	50	Percentage CMS generation occupancy at which to initiate CMS collection for bootstrapping collection stats
+product	GC CMS	CMSInitiatingOccupancyFraction	intx	-1	Percentage CMS generation occupancy to start a CMS collection cycle. A negative value means that CMSTriggerRatio is used
+product	Memory	InitiatingHeapOccupancyPercent	uintx	45	Percentage of the (entire) heap occupancy to start a concurrent GC cycle. It us used by GCs that trigger a concurrent GC cycle based on the occupancy of the entire heap, not just one of the generations (e.g., G1). A value of 0 denotes 'do constant GC cycles'.
+product	GC CMS	CMSInitiatingPermOccupancyFraction	intx	-1	Percentage CMS perm generation occupancy to start a CMScollection cycle. A negative value means that CMSTriggerPermRatio is used
+product	GC CMS	UseCMSInitiatingOccupancyOnly	bool	false	Only use occupancy as a crierion for starting a CMS collection
+product	GC CMS	CMSIsTooFullPercentage	intx	98	An absolute ceiling above which CMS will always consider the perm gen ripe for collection
+develop	GC CMS	CMSTestInFreeList	bool	false	Check if the coalesced range is already in the free lists as claimed
+notproduct	GC CMS	CMSVerifyReturnedBytes	bool	false	Check that all the garbage collected was returned to the free lists.
+notproduct	GC	ScavengeALot	bool	false	Force scavenge at every Nth exit from the runtime system (N=ScavengeALotInterval)
+develop	GC	FullGCALot	bool	false	Force full gc at every Nth exit from the runtime system (N=FullGCALotInterval)
+notproduct	GC	GCALotAtAllSafepoints	bool	false	Enforce ScavengeALot/GCALot at all potential safepoints
+product	Trace	PrintPromotionFailure	bool	false	Print additional diagnostic information following  promotion failure
+notproduct	GC	PromotionFailureALot	bool	false	Use promotion failure handling on every youngest generation collection
+develop	GC	PromotionFailureALotCount	uintx	1000	Number of promotion failures occurring at ParGCAllocBufferrefill attempts (ParNew) or promotion attempts (other young collectors) 
+develop	GC	PromotionFailureALotInterval	uintx	5	Total collections between promotion failures alot
+experimental	Misc	WorkStealingSleepMillis	intx	1	Sleep time when sleep is used for yields
+experimental	Misc	WorkStealingYieldsBeforeSleep	uintx	5000	Number of yields before a sleep is done during workstealing
+experimental	Misc	WorkStealingHardSpins	uintx	4096	Number of iterations in a spin loop between checks on time out of hard spin
+experimental	Misc	WorkStealingSpinToYieldRatio	uintx	10	Ratio of hard spins to calls to yield
+product	GC	PreserveMarkStackSize	uintx	1024	Size for stack used in promotion failure handling
+develop	Misc	ObjArrayMarkingStride	uintx	512	Number of ObjArray elements to push onto the marking stackbefore pushing a continuation entry
+notproduct	Misc	ExecuteInternalVMTests	bool	false	Enable execution of internal VM tests.
+product_pd	Memory	UseTLAB	bool	\	Use thread-local object allocation
+product_pd	Memory	ResizeTLAB	bool	\	Dynamically resize tlab size for threads
+product	Memory	ZeroTLAB	bool	false	Zero out the newly created TLAB
+product	Memory	FastTLABRefill	bool	true	Use fast TLAB refill code
+product	Trace	PrintTLAB	bool	false	Print various TLAB related information
+product	Memory	TLABStats	bool	true	Print various TLAB related information
+product	CPU	UseBlockZeroing	bool	false	Use special cpu instructions for block zeroing
+product	CPU	BlockZeroingLowLimit	intx	2048	Minimum size in bytes when block zeroing will be used
+product	CPU	UseBlockCopy	bool	false	Use special cpu instructions for block copy
+product	CPU	BlockCopyLowLimit	intx	2048	Minimum size in bytes when block copy will be used
+product	Trace	PrintRevisitStats	bool	false	Print revisit (klass and MDO) stack related information
+product	Memory	LowMemoryProtection	bool	true	Enable LowMemoryProtection(EMBEDDED ONLY)
+product_pd	Misc	NeverActAsServerClassMachine	bool	\	Never act like a server-class machine
+product	Misc	AlwaysActAsServerClassMachine	bool	false	Always act like a server-class machine
+product_pd	Memory	MaxRAM	uint64_t	\	Real memory size (in bytes) used to set maximum heap size
+product	Memory	ErgoHeapSizeLimit	uintx	0	Maximum ergonomically set heap size (in bytes); zero means use MaxRAM / MaxRAMFraction
+product	Memory	MaxRAMFraction	uintx	4	Maximum fraction (1/n) of real memory used for maximum heap size
+product	Memory	DefaultMaxRAMFraction	uintx	4	Maximum fraction (1/n) of real memory used for maximum heap size; deprecated: to be renamed to MaxRAMFraction
+product	Memory	MinRAMFraction	uintx	2	Minimum fraction (1/n) of real memory used for maxmimum heap size on systems with small physical memory size
+product	Memory	InitialRAMFraction	uintx	64	Fraction (1/n) of real memory used for initial heap size
+product	GC	UseAutoGCSelectPolicy	bool	false	Use automatic collection selection policy
+product	GC	AutoGCSelectPauseMillis	uintx	5000	Automatic GC selection pause threshhold in ms
+product	GC	UseAdaptiveSizePolicy	bool	true	Use adaptive generation sizing policies
+product	GC	UsePSAdaptiveSurvivorSizePolicy	bool	true	Use adaptive survivor sizing policies
+product	GC	UseAdaptiveGenerationSizePolicyAtMinorCollection	bool	true	Use adaptive young-old sizing policies at minor collections
+product	GC	UseAdaptiveGenerationSizePolicyAtMajorCollection	bool	true	Use adaptive young-old sizing policies at major collections
+product	GC	UseAdaptiveSizePolicyWithSystemGC	bool	false	Use statistics from System.GC for adaptive size policy
+product	GC	UseAdaptiveGCBoundary	bool	false	Allow young-old boundary to move
+develop	Trace/GC	TraceAdaptiveGCBoundary	bool	false	Trace young-old boundary moves
+develop	GC	PSAdaptiveSizePolicyResizeVirtualSpaceAlot	intx	-1	Resize the virtual spaces of the young or old generations
+product	GC	AdaptiveSizeThroughPutPolicy	uintx	0	Policy for changeing generation size for throughput goals
+product	GC	AdaptiveSizePausePolicy	uintx	0	Policy for changing generation size for pause goals
+develop	GC Parallel	PSAdjustTenuredGenForMinorPause	bool	false	Adjust tenured generation to achive a minor pause goal
+develop	GC Parallel	PSAdjustYoungGenForMajorPause	bool	false	Adjust young generation to achive a major pause goal
+product	GC	AdaptiveSizePolicyInitializingSteps	uintx	20	Number of steps where heuristics is used before data is used
+develop	GC	AdaptiveSizePolicyReadyThreshold	uintx	5	Number of collections before the adaptive sizing is started
+product	GC	AdaptiveSizePolicyOutputInterval	uintx	0	Collecton interval for printing information; zero => never
+product	GC	UseAdaptiveSizePolicyFootprintGoal	bool	true	Use adaptive minimum footprint as a goal
+product	GC	AdaptiveSizePolicyWeight	uintx	10	Weight given to exponential resizing, between 0 and 100
+product	GC	AdaptiveTimeWeight	uintx	25	Weight given to time in adaptive policy, between 0 and 100
+product	GC	PausePadding	uintx	1	How much buffer to keep for pause time
+product	GC	PromotedPadding	uintx	3	How much buffer to keep for promotion failure
+product	GC	SurvivorPadding	uintx	3	How much buffer to keep for survivor overflow
+product	GC/Memory	AdaptivePermSizeWeight	uintx	20	Weight for perm gen exponential resizing, between 0 and 100
+product	Memory	PermGenPadding	uintx	3	How much buffer to keep for perm gen sizing
+product	Memory	ThresholdTolerance	uintx	10	Allowed collection cost difference between generations
+product	GC	AdaptiveSizePolicyCollectionCostMargin	uintx	50	If collection costs are within margin, reduce both by full delta
+product	GC	YoungGenerationSizeIncrement	uintx	20	Adaptive size percentage change in young generation
+product	GC	YoungGenerationSizeSupplement	uintx	80	Supplement to YoungedGenerationSizeIncrement used at startup
+product	GC	YoungGenerationSizeSupplementDecay	uintx	8	Decay factor to YoungedGenerationSizeSupplement
+product	GC	TenuredGenerationSizeIncrement	uintx	20	Adaptive size percentage change in tenured generation
+product	GC	TenuredGenerationSizeSupplement	uintx	80	Supplement to TenuredGenerationSizeIncrement used at startup
+product	GC	TenuredGenerationSizeSupplementDecay	uintx	2	Decay factor to TenuredGenerationSizeIncrement
+product	GC	MaxGCPauseMillis	uintx	max_uintx	Adaptive size policy maximum GC pause time goal in msec, or (G1 Only) the max. GC time per MMU time slice
+product	GC	GCPauseIntervalMillis	uintx	0	Time slice for MMU specification
+product	GC	MaxGCMinorPauseMillis	uintx	max_uintx	Adaptive size policy maximum GC minor pause time goal in msec
+product	GC	GCTimeRatio	uintx	99	Adaptive size policy application time to GC time ratio
+product	GC	AdaptiveSizeDecrementScaleFactor	uintx	4	Adaptive size scale down factor for shrinking
+product	GC	UseAdaptiveSizeDecayMajorGCCost	bool	true	Adaptive size decays the major cost for long major intervals
+product	GC	AdaptiveSizeMajorGCDecayTimeScale	uintx	10	Time scale over which major costs decay
+product	GC	MinSurvivorRatio	uintx	3	Minimum ratio of young generation/survivor space size
+product	GC	InitialSurvivorRatio	uintx	8	Initial ratio of eden/survivor space size
+product	Memory	BaseFootPrintEstimate	uintx	256*M	Estimate of footprint other than Java Heap
+product	GC	UseGCOverheadLimit	bool	true	Use policy to limit of proportion of time spent in GC before an OutOfMemory error is thrown
+product	GC	GCTimeLimit	uintx	98	Limit of proportion of time spent in GC before an OutOfMemoryerror is thrown (used with GCHeapFreeLimit)
+product	GC	GCHeapFreeLimit	uintx	2	Minimum percentage of free space after a full GC before an OutOfMemoryError is thrown (used with GCTimeLimit)
+develop	GC	AdaptiveSizePolicyGCTimeLimitThreshold	uintx	5	Number of consecutive collections before gc time limit fires
+product	Trace	PrintAdaptiveSizePolicy	bool	false	Print information about AdaptiveSizePolicy
+product	Memory	PrefetchCopyIntervalInBytes	intx	-1	How far ahead to prefetch destination area (<= 0 means off)
+product	Memory	PrefetchScanIntervalInBytes	intx	-1	How far ahead to prefetch scan area (<= 0 means off)
+product	Misc	PrefetchFieldsAhead	intx	-1	How many fields ahead to prefetch in oop scan (<= 0 means off)
+develop	GC	UsePrefetchQueue	bool	true	Use the prefetch queue during PS promotion
+diagnostic	Verify	VerifyBeforeExit	bool	trueInDebug	Verify system before exiting
+diagnostic	GC	VerifyBeforeGC	bool	false	Verify memory system before GC
+diagnostic	GC	VerifyAfterGC	bool	false	Verify memory system after GC
+diagnostic	GC	VerifyDuringGC	bool	false	Verify memory system during GC (between phases)
+diagnostic	GC	GCParallelVerificationEnabled	bool	true	Enable parallel memory system verification
+diagnostic	Misc	DeferInitialCardMark	bool	false	When +ReduceInitialCardMarks, explicitly defer any that may arise from new_pre_store_barrier
+diagnostic	GC/Verify	VerifyRememberedSets	bool	false	Verify GC remembered sets
+diagnostic	GC/Verify	VerifyObjectStartArray	bool	true	Verify GC object start array if verify before/after
+product	GC	DisableExplicitGC	bool	false	Tells whether calling System.gc() does a full GC
+notproduct	Memory	CheckMemoryInitialization	bool	false	Checks memory initialization
+product	GC	CollectGen0First	bool	false	Collect youngest generation before each full GC
+diagnostic	GC CMS	BindCMSThreadToCPU	bool	false	Bind CMS Thread to CPU if possible
+diagnostic	GC CMS	CPUForCMSThread	uintx	0	When BindCMSThreadToCPU is true, the CPU to bind CMS thread to
+product	GC	BindGCTaskThreadsToCPUs	bool	false	Bind GCTaskThreads to CPUs if possible
+product	GC	UseGCTaskAffinity	bool	false	Use worker affinity when asking for GCTasks
+product	Misc	ProcessDistributionStride	uintx	4	Stride through processors when distributing processes
+product	GC CMS	CMSCoordinatorYieldSleepCount	uintx	10	number of times the coordinator GC thread will sleep while yielding before giving up and resuming GC
+product	GC CMS	CMSYieldSleepCount	uintx	0	number of times a GC thread (minus the coordinator) will sleep while yielding before giving up and resuming GC
+manageable	Trace/GC	PrintGC	bool	false	Print message at garbage collect
+manageable	Trace/GC	PrintGCDetails	bool	false	Print more details at garbage collect
+manageable	Trace/GC	PrintGCDateStamps	bool	false	Print date stamps at garbage collect
+manageable	Trace/GC	PrintGCTimeStamps	bool	false	Print timestamps at garbage collect
+product	Trace/GC	PrintGCTaskTimeStamps	bool	false	Print timestamps for individual gc worker thread tasks
+develop	GC	ConcGCYieldTimeout	intx	0	If non-zero, assert that GC threads yield within this # of ms.
+notproduct	Trace	TraceMarkSweep	bool	false	Trace mark sweep
+product	Trace/GC	PrintReferenceGC	bool	false	Print times spent handling reference objects during GC  (enabled only when PrintGCDetails)
+develop	Trace/GC	TraceReferenceGC	bool	false	Trace handling of soft/weak/final/phantom references
+develop	Trace	TraceFinalizerRegistration	bool	false	Trace registration of final references
+notproduct	Trace	TraceScavenge	bool	false	Trace scavenge
+product_rw	Trace/ClassLoading	TraceClassLoading	bool	false	Trace all classes loaded
+product	Trace/ClassLoading	TraceClassLoadingPreorder	bool	false	Trace all classes loaded in order referenced (not loaded)
+product_rw	Trace	TraceClassUnloading	bool	false	Trace unloading of classes
+product_rw	Trace	TraceLoaderConstraints	bool	false	Trace loader constraints
+product	Trace	TraceGen0Time	bool	false	Trace accumulated time for Gen 0 collection
+product	Trace	TraceGen1Time	bool	false	Trace accumulated time for Gen 1 collection
+product	Trace	PrintTenuringDistribution	bool	false	Print tenuring age information
+product_rw	Trace/GC	PrintHeapAtGC	bool	false	Print heap layout before and after each GC
+product_rw	Trace/GC	PrintHeapAtGCExtended	bool	false	Prints extended information about the layout of the heap when -XX:+PrintHeapAtGC is set
+product	Trace	PrintHeapAtSIGBREAK	bool	true	Print heap layout in response to SIGBREAK
+manageable	Trace/GC	PrintClassHistogramBeforeFullGC	bool	false	Print a class histogram before any major stop-world GC
+manageable	Trace/GC	PrintClassHistogramAfterFullGC	bool	false	Print a class histogram after any major stop-world GC
+manageable	Trace	PrintClassHistogram	bool	false	Print a histogram of class instances
+develop	Trace	TraceWorkGang	bool	false	Trace activities of work gangs
+product	Trace/GC	TraceParallelOldGCTasks	bool	false	Trace multithreaded GC activity
+develop	Trace	TraceBlockOffsetTable	bool	false	Print BlockOffsetTable maps
+develop	Trace	TraceCardTableModRefBS	bool	false	Print CardTableModRefBS maps
+develop	Trace/GC	TraceGCTaskManager	bool	false	Trace actions of the GC task manager
+develop	Trace/GC	TraceGCTaskQueue	bool	false	Trace actions of the GC task queues
+diagnostic	Trace/GC	TraceGCTaskThread	bool	false	Trace actions of the GC task threads
+product	Trace/GC	PrintParallelOldGCPhaseTimes	bool	false	Print the time taken by each parallel old gc phase.PrintGCDetails must also be enabled.
+develop	Trace/GC	TraceParallelOldGCMarkingPhase	bool	false	Trace parallel old gc marking phase
+develop	Trace/GC	TraceParallelOldGCSummaryPhase	bool	false	Trace parallel old gc summary phase
+develop	Trace/GC	TraceParallelOldGCCompactionPhase	bool	false	Trace parallel old gc compaction phase
+develop	Trace/GC	TraceParallelOldGCDensePrefix	bool	false	Trace parallel old gc dense prefix computation
+develop	Mult-Threads	IgnoreLibthreadGPFault	bool	false	Suppress workaround for libthread GP fault
+product	Trace/GC/JNI	PrintJNIGCStalls	bool	false	Print diagnostic message when GC is stalledby JNI critical section
+product	GC	UseGCLogFileRotation	bool	false	Prevent large gclog file for long running app. Requires -Xloggc:<filename>
+product	GC	NumberOfGCLogFiles	uintx	0	Number of gclog files in rotation, Default: 0, no rotation
+product	GC	GCLogFileSize	uintx	0	GC log file size, Default: 0 bytes, no rotation Only valid with UseGCLogFileRotation
+diagnostic	Trace	TraceJVMTIObjectTagging	bool	false	Trace JVMTI object tagging calls
+diagnostic	Verify	VerifyBeforeIteration	bool	false	Verify memory system before JVMTI iteration
+develop	JIT	CIPrintCompilerName	bool	false	when CIPrint is active, print the name of the active compiler
+develop	JIT	CIPrintCompileQueue	bool	false	display the contents of the compile queue whenever a compilation is enqueued
+develop	JIT	CIPrintRequests	bool	false	display every request for compilation
+product	JIT	CITime	bool	false	collect timing information for compilation
+develop	JIT	CITimeEach	bool	false	display timing information after each successful compilation
+develop	JIT	CICountOSR	bool	true	use a separate counter when assigning ids to osr compilations
+develop	JIT	CICompileNatives	bool	true	compile native methods if supported by the compiler
+develop_pd	JIT	CICompileOSR	bool	\	compile on stack replacement methods if supported by the compiler
+develop	JIT	CIPrintMethodCodes	bool	false	print method bytecodes of the compiled code
+develop	JIT	CIPrintTypeFlow	bool	false	print the results of ciTypeFlow analysis
+develop	JIT	CITraceTypeFlow	bool	false	detailed per-bytecode tracing of ciTypeFlow analysis
+develop	JIT	CICloneLoopTestLimit	intx	100	size limit for blocks heuristically cloned in ciTypeFlow
+develop	JIT	OSROnlyBCI	intx	-1	OSR only at this bci.  Negative values mean exclude that bci
+diagnostic	Trace	TraceRedundantCompiles	bool	false	Have compile broker print when a request already in the queue is requested again
+diagnostic	JIT	InitialCompileFast	bool	false	Initial compile at CompLevel_fast_compile
+diagnostic	JIT	InitialCompileReallyFast	bool	false	Initial compile at CompLevel_really_fast_compile (no profile)
+diagnostic	Misc	FullProfileOnReInterpret	bool	true	On re-interpret unc-trap compile next at CompLevel_fast_compile
+product	JIT	CICompilerCount	intx	CI_COMPILER_COUNT	Number of compiler threads to run
+product	JIT	CompilationPolicyChoice	intx	0	which compilation policy (0/1)
+develop	Misc	UseStackBanging	bool	true	use stack banging for stack overflow checks (required for proper StackOverflow handling; disable only to measure cost of stackbanging)
+develop	CPU	Use24BitFPMode	bool	true	Set 24-bit FPU mode on a per-compile basis 
+develop	CPU	Use24BitFP	bool	true	use FP instructions that produce 24-bit precise results
+develop	CPU	UseStrictFP	bool	true	use strict fp if modifier strictfp is set
+develop	JIT/Mult-Threads	GenerateSynchronizationCode	bool	true	generate locking/unlocking code for synchronized methods and monitors
+develop	JIT	GenerateCompilerNullChecks	bool	true	Generate explicit null checks for loads/stores/calls
+develop	Misc	GenerateRangeChecks	bool	true	Generate range checks for array accesses
+develop_pd	JIT	ImplicitNullChecks	bool	\	generate code for implicit null checks
+product	Trace	PrintSafepointStatistics	bool	false	print statistics about safepoint synchronization
+product	Trace	PrintSafepointStatisticsCount	intx	300	total number of safepoint statistics collected before printing them out
+product	Trace	PrintSafepointStatisticsTimeout	intx	-1	print safepoint statistics only when safepoint takes more than PrintSafepointSatisticsTimeout in millis
+product	Trace	TraceSafepointCleanupTime	bool	false	print the break down of clean up tasks performed during safepoint
+develop	JIT	InlineAccessors	bool	true	inline accessor methods (get/set)
+product	JIT	Inline	bool	true	enable inlining
+product	JIT	ClipInlining	bool	true	clip inlining if aggregate method exceeds DesiredMethodLimit
+develop	JIT	UseCHA	bool	true	enable CHA
+product	JIT	UseTypeProfile	bool	true	Check interpreter profile for historically monomorphic calls
+product	JIT	TypeProfileMajorReceiverPercent	intx	90	% of major receiver type to all profiled receivers
+notproduct	JIT	TimeCompiler	bool	false	time the compiler
+notproduct	JIT	TimeCompiler2	bool	false	detailed time the compiler (requires +TimeCompiler)
+diagnostic	Trace	PrintInlining	bool	false	prints inlining optimizations
+diagnostic	Trace	PrintIntrinsics	bool	false	prints attempted and successful inlining of intrinsics
+product	JIT	UseCountLeadingZerosInstruction	bool	false	Use count leading zeros instruction
+product	JIT	UsePopCountInstruction	bool	false	Use population count instruction
+diagnostic	CPU	DisableIntrinsic	ccstrlist		do not expand intrinsics whose (internal) names appear here
+develop	Misc	StressReflectiveCode	bool	false	Use inexact types at allocations, etc., to test reflection
+develop	Misc	EagerInitialization	bool	false	Eagerly initialize classes if possible
+develop	Trace	TraceMethodReplacement	bool	false	Print when methods are replaced do to recompilation
+develop	Trace	PrintMethodFlushing	bool	false	print the nmethods being flushed
+notproduct	Trace	LogMultipleMutexLocking	bool	false	log locking and unlocking of mutexes (only if multiple locks are held)
+develop	Misc	UseRelocIndex	bool	false	use an index to speed random access to relocations
+develop	Misc	StressCodeBuffers	bool	false	Exercise code buffer expansion and other rare state changes
+diagnostic	GC	DebugNonSafepoints	bool	trueInDebug	Generate extra debugging info for non-safepoints in nmethods
+diagnostic	JIT	DebugInlinedCalls	bool	true	If false, restricts profiled locations to the root method only
+product	Trace/JVM Options	PrintVMOptions	bool	false	Print flags that appeared on the command line
+product	JVM Options	IgnoreUnrecognizedVMOptions	bool	false	Ignore unrecognized VM options
+product	Trace	PrintCommandLineFlags	bool	false	Print flags specified on command line or set by ergonomics
+product	Trace	PrintFlagsInitial	bool	false	Print all VM flags before argument processing and exit VM
+product	Trace	PrintFlagsFinal	bool	false	Print all VM flags after argument and ergonomic processing
+notproduct	Trace	PrintFlagsWithComments	bool	false	Print all VM flags with default values and descriptions and exit
+diagnostic	Trace	SerializeVMOutput	bool	true	Use a mutex to serialize output to tty and hotspot.log
+diagnostic	Trace	DisplayVMOutput	bool	true	Display all VM output on the tty, independently of LogVMOutput
+diagnostic	Trace	LogVMOutput	bool	trueInDebug	Save VM output to hotspot.log, or to LogFile
+diagnostic	Trace	LogFile	ccstr	NULL	If LogVMOutput is on, save VM output to this file [hotspot.log]
+product	Exceptions	ErrorFile	ccstr	NULL	If an error occurs, save the error data to this file [default: ./hs_err_pid%p.log] (%p replaced with pid)
+product	Trace	DisplayVMOutputToStderr	bool	false	If DisplayVMOutput is true, display all VM output to stderr
+product	Trace	DisplayVMOutputToStdout	bool	false	If DisplayVMOutput is true, display all VM output to stdout
+product	Mult-Threads	UseHeavyMonitors	bool	false	use heavyweight instead of lightweight Java monitors
+product	Trace/String	PrintStringTableStatistics	bool	false	print statistics about the StringTable and SymbolTable
+notproduct	Trace	PrintSymbolTableSizeHistogram	bool	false	print histogram of the symbol table
+notproduct	Exceptions	ExitVMOnVerifyError	bool	false	standard exit from VM if bytecode verify error (only in debug mode)
+notproduct	Exceptions	AbortVMOnException	ccstr	NULL	Call fatal if this exception is thrown.  Example: java -XX:AbortVMOnException=java.lang.NullPointerException Foo
+notproduct	Exceptions	AbortVMOnExceptionMessage	ccstr	NULL	Call fatal if the exception pointed by AbortVMOnException has this message.
+develop	Trace	DebugVtables	bool	false	add debugging code to vtable dispatch
+develop	Trace	PrintVtables	bool	false	print vtables when printing klass
+notproduct	Trace	PrintVtableStats	bool	false	print vtables stats at end of run
+develop	Trace	TraceCreateZombies	bool	false	trace creation of zombie nmethods
+notproduct	Misc	IgnoreLockingAssertions	bool	false	disable locking assertions (for speed)
+notproduct	JIT	VerifyLoopOptimizations	bool	false	verify major loop optimizations
+product	JIT	RangeCheckElimination	bool	true	Split loop iterations to eliminate range checks
+develop_pd	JIT	UncommonNullCast	bool	\	track occurrences of null in casts; adjust compiler tactics
+develop	JIT	TypeProfileCasts	bool	true	treat casts like calls for purposes of type profiling
+develop	JIT	MonomorphicArrayCheck	bool	true	Uncommon-trap array store checks that require full type check
+diagnostic	Trace	ProfileDynamicTypes	bool	true	do extra type profiling and use it more aggressively
+develop	JIT	DelayCompilationDuringStartup	bool	true	Delay invoking the compiler until main application class is loaded
+develop	JIT	CompileTheWorld	bool	false	Compile all methods in all classes in bootstrap class path (stress test)
+develop	JIT	CompileTheWorldPreloadClasses	bool	true	Preload all classes used by a class before start loading
+notproduct	GC	CompileTheWorldSafepointInterval	intx	100	Force a safepoint every n compiles so sweeper can keep up
+develop	Trace	TraceIterativeGVN	bool	false	Print progress during Iterative Global Value Numbering
+develop	Misc	FillDelaySlots	bool	true	Fill delay slots (on SPARC only)
+develop	Verify	VerifyIterativeGVN	bool	false	Verify Def-Use modifications during sparse Iterative Global Value Numbering
+notproduct	Trace	TracePhaseCCP	bool	false	Print progress during Conditional Constant Propagation
+develop	Misc	TimeLivenessAnalysis	bool	false	Time computation of bytecode liveness analysis
+develop	Trace	TraceLivenessGen	bool	false	Trace the generation of liveness analysis information
+notproduct	Trace	TraceLivenessQuery	bool	false	Trace queries of liveness analysis information
+notproduct	Misc	CollectIndexSetStatistics	bool	false	Collect information about IndexSets
+develop	Trace	PrintDominators	bool	false	Print out dominator trees for GVN
+develop	GC	UseLoopSafepoints	bool	true	Generate Safepoint nodes in every loop
+notproduct	Trace	TraceCISCSpill	bool	false	Trace allocators use of cisc spillable instructions
+notproduct	Trace	TraceSpilling	bool	false	Trace spilling
+product	JIT	SplitIfBlocks	bool	true	Clone compares and control flow through merge points to fold some branches
+develop	Misc	FastAllocateSizeLimit	intx	128*K	Inline allocations larger than this in doublewords must go slow
+product	JIT	AggressiveOpts	bool	false	Enable aggressive optimizations - see arguments.cpp
+product	String	UseStringCache	bool	false	Enable String cache capabilities on String.java
+develop	JIT	CountCompiledCalls	bool	false	counts method invocations
+notproduct	Misc	CountRuntimeCalls	bool	false	counts VM runtime calls
+develop	JNI	CountJNICalls	bool	false	counts jni method invocations
+notproduct	Misc	CountJVMCalls	bool	false	counts jvm method invocations
+notproduct	Exceptions	CountRemovableExceptions	bool	false	count exceptions that could be replaced by branches due to inlining
+notproduct	GC	ICMissHistogram	bool	false	produce histogram of IC misses
+notproduct	Trace	PrintClassStatistics	bool	false	prints class statistics at end of run
+notproduct	Trace	PrintMethodStatistics	bool	false	prints method statistics at end of run
+develop	Misc	ClearInterpreterLocals	bool	false	Always clear local variables of interpreter activations upon entry
+product_pd	JIT	RewriteBytecodes	bool	\	Allow rewriting of bytecodes (bytecodes are not immutable)
+product_pd	JIT	RewriteFrequentPairs	bool	\	Rewrite frequently used bytecode pairs into a single bytecode
+diagnostic	Trace	PrintInterpreter	bool	false	Prints the generated interpreter code
+product	JIT	UseInterpreter	bool	true	Use interpreter for non-compiled methods
+develop	Misc	UseFastSignatureHandlers	bool	true	Use fast signature handlers for native calls
+develop	CPU	UseV8InstrsOnly	bool	false	Use SPARC-V8 Compliant instruction subset
+product	CPU	UseNiagaraInstrs	bool	false	Use Niagara-efficient instruction subset
+develop	CPU	UseCASForSwap	bool	false	Do not use swap instructions, but only CAS (in a loop) on SPARC
+product	JIT	UseLoopCounter	bool	true	Increment invocation counter on backward branch
+product	JIT	UseFastEmptyMethods	bool	true	Use fast method entry code for empty methods
+product	JIT	UseFastAccessorMethods	bool	true	Use fast method entry code for accessor methods
+product_pd	JIT	UseOnStackReplacement	bool	\	Use on stack replacement, calls runtime if invoc. counter overflows in loop
+notproduct	Trace	TraceOnStackReplacement	bool	false	Trace on stack replacement
+develop	GC	PoisonOSREntry	bool	true	Detect abnormal calls to OSR code
+product_pd	JNI	PreferInterpreterNativeStubs	bool	\	Use always interpreter stubs for native methods invoked via interpreter
+develop	Misc	CountBytecodes	bool	false	Count number of bytecodes executed
+develop	Trace	PrintBytecodeHistogram	bool	false	Print histogram of the executed bytecodes
+develop	Trace	PrintBytecodePairHistogram	bool	false	Print histogram of the executed bytecode pairs
+diagnostic	Trace	PrintSignatureHandlers	bool	false	Print code generated for native method signature handlers
+develop	Verify	VerifyOops	bool	false	Do plausibility checks for oops
+develop	Verify	CheckUnhandledOops	bool	false	Check for unhandled oops in VM code
+develop	JNI	VerifyJNIFields	bool	trueInDebug	Verify jfieldIDs for instance fields
+notproduct	JNI	VerifyJNIEnvThread	bool	false	Verify JNIEnv.thread == Thread::current() when entering VM from JNI
+develop	Verify	VerifyFPU	bool	false	Verify FPU state (check for NaN's, etc.)
+develop	Mult-Threads	VerifyThread	bool	false	Watch the thread register for corruption (SPARC only)
+develop	Verify	VerifyActivationFrameSize	bool	false	Verify that activation frame didn't become smaller than its minimal size
+develop	Trace	TraceFrequencyInlining	bool	false	Trace frequency based inlining
+notproduct	Trace	TraceTypeProfile	bool	false	Trace type profile
+develop_pd	JIT	InlineIntrinsics	bool	\	Inline intrinsics that can be statically resolved
+product_pd	Trace	ProfileInterpreter	bool	\	Profile at the bytecode level during interpretation
+develop_pd	Trace	ProfileTraps	bool	\	Profile deoptimization traps at the bytecode level
+product	Trace	ProfileMaturityPercentage	intx	20	number of method invocations/branches (expressed as % of CompileThreshold) before using the method's profile
+develop	Trace	PrintMethodData	bool	false	Print the results of +ProfileInterpreter at end of run
+develop	Verify	VerifyDataPointer	bool	trueInDebug	Verify the method data pointer during interpreter profiling
+develop	JIT	VerifyCompiledCode	bool	false	Include miscellaneous runtime verifications in nmethod code; default off because it disturbs nmethod size heuristics
+notproduct	GC	CrashGCForDumpingJavaThread	bool	false	Manually make GC thread crash then dump java stack trace;  Test only
+product	JIT	UseCompiler	bool	true	use compilation
+develop	Trace	TraceCompilationPolicy	bool	false	Trace compilation policy
+develop	JIT	TimeCompilationPolicy	bool	false	Time the compilation policy
+product	JIT	UseCounterDecay	bool	true	adjust recompilation counters
+develop	Misc	CounterHalfLifeTime	intx	30	half-life time of invocation counters (in secs)
+develop	Misc	CounterDecayMinIntervalLength	intx	500	Min. ms. between invocation of CounterDecay
+product	JIT	AlwaysCompileLoopMethods	bool	false	when using recompilation, never interpret methods containing loops
+product	JIT	DontCompileHugeMethods	bool	true	don't compile methods > HugeMethodLimit
+product	JIT	EstimateArgEscape	bool	true	Analyze bytecodes to estimate escape state of arguments
+product	JIT	BCEATraceLevel	intx	0	How much tracing to do of bytecode escape analysis estimates
+product	JIT	MaxBCEAEstimateLevel	intx	5	Maximum number of nested calls that are analyzed by BC EA.
+product	JIT	MaxBCEAEstimateSize	intx	150	Maximum bytecode size of a method to be analyzed by BC EA.
+product	Memory	AllocatePrefetchStyle	intx	1	0 = no prefetch, 1 = prefetch instructions for each allocation, 2 = use TLAB watermark to gate allocation prefetch, 3 = use BIS instruction on Sparc for allocation prefetch
+product	Memory	AllocatePrefetchDistance	intx	-1	Distance to prefetch ahead of allocation pointer
+product	Memory	AllocatePrefetchLines	intx	3	Number of lines to prefetch ahead of array allocation pointer
+product	Memory	AllocateInstancePrefetchLines	intx	1	Number of lines to prefetch ahead of instance allocation pointer
+product	Memory	AllocatePrefetchStepSize	intx	16	Step size in bytes of sequential prefetch instructions
+product	Memory	AllocatePrefetchInstr	intx	0	Prefetch instruction to prefetch ahead of allocation pointer
+product	JIT	ReadPrefetchInstr	intx	0	Prefetch instruction to prefetch ahead
+product	JIT	ArraycopySrcPrefetchDistance	uintx	0	Distance to prefetch source array in arracopy
+product	JIT	ArraycopyDstPrefetchDistance	uintx	0	Distance to prefetch destination array in arracopy
+develop	Trace	TraceDeoptimization	bool	false	Trace deoptimization
+develop	Trace/JIT	DebugDeoptimization	bool	false	Tracing various information while debugging deoptimization
+product	JIT	SelfDestructTimer	intx	0	Will cause VM to terminate after a given time (in minutes) (0 means off)
+product	Trace	MaxJavaStackTraceDepth	intx	1024	Max. no. of lines in the stack trace for Java exceptions (0 means all)
+diagnostic	GC	GuaranteedSafepointInterval	intx	1000	Guarantee a safepoint (at least) every so many milliseconds (0 means none,NOT EMBEDDED)
+product	GC	GuaranteedSafepointInterval	intx	0	Guarantee a safepoint (at least) every so many milliseconds (0 means none,EMBEDDED ONLY)
+product	GC	SafepointTimeoutDelay	intx	10000	Delay in milliseconds for option SafepointTimeout
+product	JIT	NmethodSweepFraction	intx	16	Number of invocations of sweeper to cover all nmethods
+product	JIT	NmethodSweepCheckInterval	intx	5	Compilers wake up every n seconds to possibly sweep nmethods
+notproduct	Trace	LogSweeper	bool	false	Keep a ring buffer of sweeper activity
+notproduct	Trace	SweeperLogEntries	intx	1024	Number of records in the ring buffer of sweeper activity
+notproduct	Misc	MemProfilingInterval	intx	500	Time between each invocation of the MemProfiler
+develop	Misc	MallocCatchPtr	intx	-1	Hit breakpoint when mallocing/freeing this pointer
+notproduct	Misc	AssertRepeat	intx	1	number of times to evaluate expression in assert (to estimate overhead); only works with -DUSE_REPEATED_ASSERTS
+notproduct	Exceptions	SuppressErrorAt	ccstrlist		List of assertions (file:line) to muzzle
+notproduct	Misc	HandleAllocationLimit	uintx	1024	Threshold for HandleMark allocation when +TraceHandleAllocation is used
+develop	Misc	TotalHandleAllocationLimit	uintx	1024	Threshold for total handle allocation when +TraceHandleAllocation is used
+develop	Misc	StackPrintLimit	intx	100	number of stack frames to print in VM-level stack dump
+notproduct	Misc	MaxElementPrintSize	intx	256	maximum number of elements to print
+notproduct	Misc	MaxSubklassPrintSize	intx	4	maximum number of subklasses to print when printing klass
+product	JIT	MaxInlineLevel	intx	9	maximum number of nested calls that are inlined
+product	JIT	MaxRecursiveInlineLevel	intx	1	maximum number of nested recursive calls that are inlined
+product_pd	JIT	InlineSmallCode	intx	\	Only inline already compiled methods if their code size is less than this
+product	JIT	MaxInlineSize	intx	35	maximum bytecode size of a method to be inlined
+product_pd	JIT	FreqInlineSize	intx	\	maximum bytecode size of a frequent method to be inlined
+product	JIT	MaxTrivialSize	intx	6	maximum bytecode size of a trivial method to be inlined
+product	JIT	MinInliningThreshold	intx	250	min. invocation count a method needs to have to be inlined
+develop	Misc	AlignEntryCode	intx	4	aligns entry code to specified value (in bytes)
+develop	Misc	MethodHistogramCutoff	intx	100	cutoff value for method invoc. histogram (+CountCalls)
+develop	Trace	ProfilerNumberOfInterpretedMethods	intx	25	# of interpreted methods to show in profile
+develop	JIT	ProfilerNumberOfCompiledMethods	intx	25	# of compiled methods to show in profile
+develop	Trace	ProfilerNumberOfStubMethods	intx	25	# of stub methods to show in profile
+develop	Trace	ProfilerNumberOfRuntimeStubNodes	intx	25	# of runtime stub nodes to show in profile
+product	Trace	ProfileIntervalsTicks	intx	100	# of ticks between printing of interval profile (+ProfileIntervals)
+notproduct	Misc	ScavengeALotInterval	intx	1	Interval between which scavenge will occur with +ScavengeALot
+notproduct	GC	FullGCALotInterval	intx	1	Interval between which full gc will occur with +FullGCALot
+notproduct	GC	FullGCALotStart	intx	0	For which invocation to start FullGCAlot
+notproduct	GC	FullGCALotDummies	intx	32*K	Dummy object allocated with +FullGCALot, forcing all objects to move
+develop	Misc	DontYieldALotInterval	intx	10	Interval between which yields will be dropped (milliseconds)
+develop	Mult-Threads	MinSleepInterval	intx	1	Minimum sleep() interval (milliseconds) when ConvertSleepToYield is off (used for SOLARIS)
+product	Trace	EventLogLength	intx	2000	maximum nof events in event log
+develop	Trace	ProfilerPCTickThreshold	intx	15	Number of ticks in a PC buckets to be a hotspot
+notproduct	JIT	DeoptimizeALotInterval	intx	5	Number of exits until DeoptimizeALot kicks in
+notproduct	Misc	ZombieALotInterval	intx	5	Number of exits until ZombieALot kicks in
+develop	Misc	StressNonEntrant	bool	false	Mark nmethods non-entrant at registration
+diagnostic	Memory/Verify	MallocVerifyInterval	intx	0	if non-zero, verify C heap after every N calls to malloc/realloc/free
+diagnostic	Memory/Verify	MallocVerifyStart	intx	0	if non-zero, start verifying C heap after Nth call to malloc/realloc/free
+product	JIT	TypeProfileWidth	intx	2	number of receiver types to record in call/cast profile
+develop	Misc	BciProfileWidth	intx	2	number of return bci's to record in ret profile
+product	JIT	PerMethodRecompilationCutoff	intx	400	After recompiling N times, stay in the interpreter (-1=>'Inf')
+product	JIT	PerBytecodeRecompilationCutoff	intx	200	Per-BCI limit on repeated recompilation (-1=>'Inf')
+product	JIT	PerMethodTrapLimit	intx	100	Limit on traps (of one kind) in a method (includes inlines)
+product	JIT	PerBytecodeTrapLimit	intx	4	Limit on traps (of one kind) at a particular BCI
+develop	Misc	FreqCountInvocations	intx	1	Scaling factor for branch frequencies (deprecated)
+develop	JIT	InlineFrequencyRatio	intx	20	Ratio of call site execution to caller method invocation
+develop_pd	JIT	InlineFrequencyCount	intx	\	Count of call site execution necessary to trigger frequent inlining
+develop	JIT	InlineThrowCount	intx	50	Force inlining of interpreted methods that throw this often
+develop	JIT	InlineThrowMaxSize	intx	200	Force inlining of throwing methods smaller than this
+product	Misc	AliasLevel	intx	3	0 for no aliasing, 1 for oop/field/static/array split, 2 for class split, 3 for unique instances
+develop	Verify	VerifyAliases	bool	false	perform extra checks on the results of alias analysis
+develop	Trace	ProfilerNodeSize	intx	1024	Size in K to allocate for the Profile Nodes of each thread
+develop	Misc	V8AtomicOperationUnderLockSpinCount	intx	50	Number of times to spin wait on a v8 atomic operation lock
+product	Mult-Threads	ReadSpinIterations	intx	100	Number of read attempts before a yield (spin inner loop)
+product_pd	Mult-Threads	PreInflateSpin	intx	\	Number of times to spin wait before inflation
+product	Mult-Threads	PreBlockSpin	intx	10	Number of times to spin in an inflated lock before going to an OS lock
+product	Memory/GC	InitialHeapSize	uintx	0	Initial heap size (in bytes); zero means OldSize + NewSize
+product	Memory/GC	MaxHeapSize	uintx	ScaleForWordSize(96*M)	Maximum heap size (in bytes)
+product	GC/Memory	OldSize	uintx	ScaleForWordSize(4*M)	Initial tenured generation size (in bytes)
+product	GC/Memory	NewSize	uintx	ScaleForWordSize(1*M)	Initial new generation size (in bytes)
+product	GC/Memory	MaxNewSize	uintx	max_uintx	Maximum new generation size (in bytes), max_uintx means set ergonomically
+product	GC/Memory	PretenureSizeThreshold	uintx	0	Maximum size in bytes of objects allocated in DefNew generation; zero means no maximum
+product	GC/Memory	TLABSize	uintx	0	Starting TLAB size (in bytes); zero means set ergonomically
+product	GC/Memory	MinTLABSize	uintx	2*K	Minimum allowed TLAB size (in bytes)
+product	GC/Memory	TLABAllocationWeight	uintx	35	Allocation averaging weight
+product	GC/Memory	TLABWasteTargetPercent	uintx	1	Percentage of Eden that can be wasted
+product	GC/Memory	TLABRefillWasteFraction	uintx	64	Max TLAB waste at a refill (internal fragmentation)
+product	GC/Memory	TLABWasteIncrement	uintx	4	Increment allowed waste at slow allocation
+product	GC/Memory	SurvivorRatio	intx	8	Ratio of eden/survivor space size
+product	GC/Memory	NewRatio	intx	2	Ratio of new/old generation sizes
+product_pd	Mult-Threads	NewSizeThreadIncrease	uintx	\	Additional size added to desired new generation size per non-daemon thread (in bytes)
+product_pd	GC/Memory	PermSize	uintx	\	Initial size of permanent generation (in bytes)
+product_pd	GC/Memory	MaxPermSize	uintx	\	Maximum size of permanent generation (in bytes)
+product	Memory/GC	MinHeapFreeRatio	uintx	40	Min percentage of heap free after GC to avoid expansion
+product	Memory/GC	MaxHeapFreeRatio	uintx	70	Max percentage of heap free after GC to avoid shrinking
+product	GC/Memory	SoftRefLRUPolicyMSPerMB	intx	1000	Number of milliseconds per MB of free space in the heap
+product	Memory/GC	MinHeapDeltaBytes	uintx	ScaleForWordSize(128*K)	Min change in heap space due to GC (in bytes)
+product	Memory/GC	MinPermHeapExpansion	uintx	ScaleForWordSize(256*K)	Min expansion of permanent heap (in bytes)
+product	Memory/GC	MaxPermHeapExpansion	uintx	ScaleForWordSize(4*M)	Max expansion of permanent heap without full GC (in bytes)
+product	GC	QueuedAllocationWarningCount	intx	0	Number of times an allocation that queues behind a GC will retry before printing a warning
+diagnostic	GC	VerifyGCStartAt	uintx	0	GC invoke count where +VerifyBefore/AfterGC kicks in
+diagnostic	GC	VerifyGCLevel	intx	0	Generation level at which to start +VerifyBefore/AfterGC
+develop	GC	ExitAfterGCNum	uintx	0	If non-zero, exit after this GC.
+product	GC/Memory	MaxTenuringThreshold	intx	15	Maximum value for tenuring threshold
+product	GC/Memory	InitialTenuringThreshold	intx	7	Initial value for tenuring threshold
+product	GC/Memory	TargetSurvivorRatio	intx	50	Desired percentage of survivor space used after scavenge
+product	GC/Memory	MarkSweepDeadRatio	uintx	5	Percentage (0-100) of the old gen allowed as dead wood.Serial mark sweep treats this as both the min and max value.CMS uses this value only if it falls back to mark sweep.Par compact uses a variable scale based on the density of thegeneration and treats this as the max value when the heap iseither completely full or completely empty.  Par compact alsohas a smaller default value; see arguments.cpp.
+product	GC/Memory	PermMarkSweepDeadRatio	uintx	20	Percentage (0-100) of the perm gen allowed as dead wood.See MarkSweepDeadRatio for collector-specific comments.
+product	GC/Memory	MarkSweepAlwaysCompactCount	intx	4	How often should we fully compact the heap (ignoring the dead space parameters)
+product	Trace/GC CMS	PrintCMSStatistics	intx	0	Statistics for CMS
+product	Trace/GC CMS	PrintCMSInitiationStatistics	bool	false	Statistics for initiating a CMS collection
+product	Trace	PrintFLSStatistics	intx	0	Statistics for CMS' FreeListSpace
+product	Trace	PrintFLSCensus	intx	0	Census for CMS' FreeListSpace
+develop	GC	GCExpandToAllocateDelayMillis	uintx	0	Delay in ms between expansion and allocation
+product	GC	DeferThrSuspendLoopCount	intx	4000	(Unstable) Number of times to iterate in safepoint loop  before blocking VM threads 
+product	GC	DeferPollingPageLoopCount	intx	-1	(Unsafe,Unstable) Number of iterations in safepoint loop before changing safepoint polling page to RO 
+product	GC	SafepointSpinBeforeYield	intx	2000	(Unstable)
+product	GC	PSChunkLargeArrays	bool	true	true: process large arrays in chunks
+product	GC	GCDrainStackTargetSize	uintx	64	how many entries we'll try to leave on the stack during parallel GC
+product_pd	Memory	StackYellowPages	intx	\	Number of yellow zone (recoverable overflows) pages
+product_pd	Memory	StackRedPages	intx	\	Number of red zone (unrecoverable overflows) pages
+product_pd	Memory	StackShadowPages	intx	\	Number of shadow zone (for overflow checking) pages this should exceed the depth of the VM and native call stack
+product_pd	Memory/Mult-Threads	ThreadStackSize	intx	\	Thread Stack Size (in Kbytes)
+product_pd	Memory	VMThreadStackSize	intx	\	Non-Java Thread Stack Size (in Kbytes)
+product_pd	Memory	CompilerThreadStackSize	intx	\	Compiler Thread Stack Size (in Kbytes)
+develop_pd	Memory	JVMInvokeMethodSlack	uintx	\	Stack space (bytes) required for JVM_InvokeMethod to complete
+product	Mult-Threads	ThreadSafetyMargin	uintx	50*M	Thread safety margin is used on fixed-stack LinuxThreads (on Linux/x86 only) to prevent heap-stack collision. Set to 0 to disable this feature
+develop	JIT	CodeCacheSegmentSize	uintx	64	Code cache segment size (in bytes) - smallest unit of allocation
+develop_pd	JIT	CodeEntryAlignment	intx	\	Code entry alignment for generated code (in bytes)
+product_pd	JIT	OptoLoopAlignment	intx	\	Align inner loops to zero relative to this modulus
+product_pd	JIT	InitialCodeCacheSize	uintx	\	Initial code cache size (in bytes)
+product_pd	JIT	ReservedCodeCacheSize	uintx	\	Reserved code cache size (in bytes) - maximum code cache size
+product	JIT	CodeCacheMinimumFreeSpace	uintx	500*K	When less than X space left, we stop compiling.
+product_pd	JIT	CodeCacheExpansionSize	uintx	\	Code cache expansion size (in bytes)
+develop_pd	JIT	CodeCacheMinBlockLength	uintx	\	Minimum number of segments in a code cache block.
+notproduct	JIT	ExitOnFullCodeCache	bool	false	Exit the VM if we fill the code cache.
+product	JIT	UseCodeCacheFlushing	bool	true	Attempt to clean the code cache before shutting off compiler
+product	JIT	MinCodeCacheFlushingInterval	intx	30	Min number of seconds between code cache cleaning sessions
+product	JIT	CodeCacheFlushingMinimumFreeSpace	uintx	1500*K	When less than X space left, start code cache cleaning
+develop	JIT	BinarySwitchThreshold	intx	5	Minimal number of lookupswitch entries for rewriting to binary switch
+develop	JIT	StopInterpreterAt	intx	0	Stops interpreter execution at specified bytecode number
+develop	Trace	TraceBytecodesAt	intx	0	Traces bytecodes starting with specified bytecode number
+develop	JIT	CIStart	intx	0	the id of the first compilation to permit
+develop	JIT	CIStop	intx	-1	the id of the last compilation to permit
+develop	JIT	CIStartOSR	intx	0	the id of the first osr compilation to permit (CICountOSR must be on)
+develop	JIT	CIStopOSR	intx	-1	the id of the last osr compilation to permit (CICountOSR must be on)
+develop	JIT	CIBreakAtOSR	intx	-1	id of osr compilation to break at
+develop	JIT	CIBreakAt	intx	-1	id of compilation to break at
+product	JIT	CompileOnly	ccstrlist		List of methods (pkg/class.name) to restrict compilation to
+product	JIT	CompileCommandFile	ccstr	NULL	Read compiler commands from this file [.hotspot_compiler]
+product	JIT	CompileCommand	ccstrlist		Prepend to .hotspot_compiler; e.g. log,java/lang/String.<init>
+product	JIT	CICompilerCountPerCPU	bool	false	1 compiler thread for log(N CPUs)
+develop	JIT	CIFireOOMAt	intx	-1	Fire OutOfMemoryErrors throughout CI for testing the compiler (non-negative value throws OOM after this many CI accesses in each compile)
+develop	JIT	CIFireOOMAtDelay	intx	-1	Wait for this many CI accesses to occur in all compiles before beginning to throw OutOfMemoryErrors in each compile
+notproduct	JIT	CIObjectFactoryVerify	bool	false	enable potentially expensive verification in ciObjectFactory
+product_pd	Mult-Threads	UseThreadPriorities	bool	\	Use native thread priorities
+product	Mult-Threads	ThreadPriorityPolicy	intx	0	0 : Normal.                                                         VM chooses priorities that are appropriate for normal           applications. On Solaris NORM_PRIORITY and above are mapped     to normal native priority. Java priorities below NORM_PRIORITY    map to lower native priority values. On Windows applications    are allowed to use higher native priorities. However, with      ThreadPriorityPolicy=0, VM will not use the highest possible    native priority, THREAD_PRIORITY_TIME_CRITICAL, as it may       interfere with system threads. On Linux thread priorities       are ignored because the OS does not support static priority     in SCHED_OTHER scheduling class which is the only choice for    non-root, non-realtime applications.                        1 : Aggressive.                                                     Java thread priorities map over to the entire range of          native thread priorities. Higher Java thread priorities map     to higher native thread priorities. This policy should be       used with care, as sometimes it can cause performance           degradation in the application and/or the entire system. On     Linux this policy requires root privilege.
+product	Mult-Threads	ThreadPriorityVerbose	bool	false	Print priority changes
+product	Mult-Threads	DefaultThreadPriority	intx	-1	The native priority at which threads run if not elsewhere specified (-1 means no change)
+product	Mult-Threads	CompilerThreadPriority	intx	-1	The native priority at which compiler threads should run (-1 means no change)
+product	Mult-Threads	VMThreadPriority	intx	-1	The native priority at which the VM thread should run (-1 means no change)
+product	Mult-Threads	CompilerThreadHintNoPreempt	bool	true	(Solaris only) Give compiler threads an extra quanta
+product	Mult-Threads	VMThreadHintNoPreempt	bool	false	(Solaris only) Give VM thread an extra quanta
+product	Mult-Threads	JavaPriority1_To_OSPriority	intx	-1	Map Java priorities to OS priorities
+product	Mult-Threads	JavaPriority2_To_OSPriority	intx	-1	Map Java priorities to OS priorities
+product	Mult-Threads	JavaPriority3_To_OSPriority	intx	-1	Map Java priorities to OS priorities
+product	Mult-Threads	JavaPriority4_To_OSPriority	intx	-1	Map Java priorities to OS priorities
+product	Mult-Threads	JavaPriority5_To_OSPriority	intx	-1	Map Java priorities to OS priorities
+product	Mult-Threads	JavaPriority6_To_OSPriority	intx	-1	Map Java priorities to OS priorities
+product	Mult-Threads	JavaPriority7_To_OSPriority	intx	-1	Map Java priorities to OS priorities
+product	Mult-Threads	JavaPriority8_To_OSPriority	intx	-1	Map Java priorities to OS priorities
+product	Mult-Threads	JavaPriority9_To_OSPriority	intx	-1	Map Java priorities to OS priorities
+product	Mult-Threads	JavaPriority10_To_OSPriority	intx	-1	Map Java priorities to OS priorities
+experimental	Mult-Threads	UseCriticalJavaThreadPriority	bool	false	Java thread priority 10 maps to critical scheduling priority
+experimental	JIT/Mult-Threads	UseCriticalCompilerThreadPriority	bool	false	Compiler thread(s) run at critical scheduling priority
+experimental	GC CMS/Mult-Threads	UseCriticalCMSThreadPriority	bool	false	ConcurrentMarkSweep thread runs at critical scheduling priority
+notproduct	JIT	CompileTheWorldStartAt	intx	1	First class to consider when using +CompileTheWorld
+notproduct	JIT	CompileTheWorldStopAt	intx	max_jint	Last class to consider when using +CompileTheWorld
+develop	JIT	NewCodeParameter	intx	0	Testing Only: Create a dedicated integer parameter before putback
+develop	JIT	MinOopMapAllocation	intx	8	Minimum number of OopMap entries in an OopMapSet
+develop	JIT	LongCompileThreshold	intx	50	Used with +TraceLongCompiles
+product	JIT	StarvationMonitorInterval	intx	200	Pause between each check in ms
+product_pd	JIT	CompileThreshold	intx	\	number of interpreted method invocations before (re-)compiling
+product_pd	JIT	BackEdgeThreshold	intx	\	Interpreter Back edge threshold at which an OSR compilation is invoked
+product	Trace	Tier0InvokeNotifyFreqLog	intx	7	Interpreter (tier 0) invocation notification frequency.
+product	Trace	Tier2InvokeNotifyFreqLog	intx	11	C1 without MDO (tier 2) invocation notification frequency.
+product	Trace	Tier3InvokeNotifyFreqLog	intx	10	C1 with MDO profiling (tier 3) invocation notification frequency.
+product	Trace	Tier23InlineeNotifyFreqLog	intx	20	Inlinee invocation (tiers 2 and 3) notification frequency
+product	Trace	Tier0BackedgeNotifyFreqLog	intx	10	Interpreter (tier 0) invocation notification frequency.
+product	Trace	Tier2BackedgeNotifyFreqLog	intx	14	C1 without MDO (tier 2) invocation notification frequency.
+product	Trace	Tier3BackedgeNotifyFreqLog	intx	13	C1 with MDO profiling (tier 3) invocation notification frequency.
+product	JIT	Tier2CompileThreshold	intx	0	threshold at which tier 2 compilation is invoked
+product	JIT	Tier2BackEdgeThreshold	intx	0	Back edge threshold at which tier 2 compilation is invoked
+product	JIT	Tier3InvocationThreshold	intx	200	Compile if number of method invocations crosses this threshold
+product	JIT	Tier3MinInvocationThreshold	intx	100	Minimum invocation to compile at tier 3
+product	JIT	Tier3CompileThreshold	intx	2000	Threshold at which tier 3 compilation is invoked (invocation minimum must be satisfied.
+product	JIT	Tier3BackEdgeThreshold	intx	60000	Back edge threshold at which tier 3 OSR compilation is invoked
+product	JIT	Tier4InvocationThreshold	intx	5000	Compile if number of method invocations crosses this threshold
+product	JIT	Tier4MinInvocationThreshold	intx	600	Minimum invocation to compile at tier 4
+product	JIT	Tier4CompileThreshold	intx	15000	Threshold at which tier 4 compilation is invoked (invocation minimum must be satisfied.
+product	JIT	Tier4BackEdgeThreshold	intx	40000	Back edge threshold at which tier 4 OSR compilation is invoked
+product	JIT	Tier3DelayOn	intx	5	If C2 queue size grows over this amount per compiler thread stop compiling at tier 3 and start compiling at tier 2
+product	JIT	Tier3DelayOff	intx	2	If C2 queue size is less than this amount per compiler thread allow methods compiled at tier 2 transition to tier 3
+product	JIT	Tier3LoadFeedback	intx	5	Tier 3 thresholds will increase twofold when C1 queue size reaches this amount per compiler thread
+product	JIT	Tier4LoadFeedback	intx	3	Tier 4 thresholds will increase twofold when C2 queue size reaches this amount per compiler thread
+product	JIT	TieredCompileTaskTimeout	intx	50	Kill compile task if method was not used within given timeout in milliseconds
+product	JIT	TieredStopAtLevel	intx	4	Stop at given compilation level
+product	JIT	Tier0ProfilingStartPercentage	intx	200	Start profiling in interpreter if the counters exceed tier 3thresholds by the specified percentage
+product	JIT	TieredRateUpdateMinTime	intx	1	Minimum rate sampling interval (in milliseconds)
+product	JIT	TieredRateUpdateMaxTime	intx	25	Maximum rate sampling interval (in milliseconds)
+product_pd	JIT	TieredCompilation	bool	\	Enable tiered compilation
+product	Trace	PrintTieredEvents	bool	false	Print tiered events notifications
+product	JIT	StressTieredRuntime	bool	false	Alternate client and server compiler on compile requests
+product_pd	JIT	OnStackReplacePercentage	intx	\	NON_TIERED number of method invocations/branches (expressed as %of CompileThreshold) before (re-)compiling OSR code
+product	JIT	InterpreterProfilePercentage	intx	33	NON_TIERED number of method invocations/branches (expressed as %of CompileThreshold) before profiling in the interpreter
+develop	JIT	MaxRecompilationSearchLength	intx	10	max. # frames to inspect searching for recompilee
+develop	JIT	MaxInterpretedSearchLength	intx	3	max. # interp. frames to skip when searching for recompilee
+develop	JIT	DesiredMethodLimit	intx	8000	desired max. method size (in bytecodes) after inlining
+develop	JIT	HugeMethodLimit	intx	8000	don't compile methods larger than this if +DontCompileHugeMethods
+develop	JIT	UseNewReflection	bool	true	Temporary flag for transition to reflection based on dynamic bytecode generation in 1.4; can no longer be turned off in 1.4 JDK, and is unneeded in 1.3 JDK, but marks most places VM changes were needed
+develop	Verify	VerifyReflectionBytecodes	bool	false	Force verification of 1.4 reflection bytecodes. Does not work in situations like that described in 4486457 or for constructors generated for serialization, so can not be enabled in product.
+product	Exceptions	ReflectionWrapResolutionErrors	bool	true	Temporary flag for transition to AbstractMethodError wrapped in InvocationTargetException. See 6531596
+develop	JIT	FastSuperclassLimit	intx	8	Depth of hardwired instanceof accelerator array
+product	Memory	MaxDirectMemorySize	intx	-1	Maximum total size of NIO direct-buffer allocations
+diagnostic	JIT	UseNewCode	bool	false	Testing Only: Use the new version while testing
+diagnostic	JIT	UseNewCode2	bool	false	Testing Only: Use the new version while testing
+diagnostic	JIT	UseNewCode3	bool	false	Testing Only: Use the new version while testing
+product	Trace	UsePerfData	bool	falseInEmbedded	Flag to disable jvmstat instrumentation for performance testingand problem isolation purposes.
+product	Memory	PerfDataSaveToFile	bool	false	Save PerfData memory to hsperfdata_<pid> file on exit
+product	Memory	PerfDataSaveFile	ccstr	NULL	Save PerfData memory to the specified absolute pathname,%p in the file name if present will be replaced by pid
+product	Memory	PerfDataSamplingInterval	intx	50 /*ms*/	Data sampling interval in milliseconds
+develop	Memory	PerfTraceDataCreation	bool	false	Trace creation of Performance Data Entries
+develop	Memory	PerfTraceMemOps	bool	false	Trace PerfMemory create/attach/detach calls
+product	Memory	PerfDisableSharedMem	bool	false	Store performance data in standard memory
+product	Memory	PerfDataMemorySize	intx	32*K	Size of performance data memory region. Will be rounded up to a multiple of the native os page size.
+product	String	PerfMaxStringConstLength	intx	1024	Maximum PerfStringConstant string length before truncation
+product	Memory	PerfAllowAtExitRegistration	bool	false	Allow registration of atexit() methods
+product	Memory	PerfBypassFileSystemCheck	bool	false	Bypass Win32 file system criteria checks (Windows Only)
+product	Exceptions	UnguardOnExecutionViolation	intx	0	Unguard page and retry on no-execute fault (Win32 only)0=off, 1=conservative, 2=aggressive
+product	Misc	ManagementServer	bool	false	Create JMX Management Server
+product	Misc	DisableAttachMechanism	bool	false	Disable mechanism that allows tools to attach to this VM
+product	Misc	StartAttachListener	bool	false	Always start Attach Listener at VM startup
+manageable	Trace	PrintConcurrentLocks	bool	false	Print java.util.concurrent locks in thread dump
+product	Exceptions	TransmitErrorReport	bool	false	Enable error report transmission on erroneous termination
+product	Exceptions	ErrorReportServer	ccstr	NULL	Override built-in error report server address
+product	GC/Memory	UseSharedSpaces	bool	true	Use shared spaces in the permanent generation
+product	GC/Memory	RequireSharedSpaces	bool	false	Require shared spaces in the permanent generation
+product	GC/Memory	DumpSharedSpaces	bool	false	Special mode: JVM reads a class list, loads classes, builds shared spaces, and dumps the shared spaces to a file to be used in future JVM runs.
+product	Trace	PrintSharedSpaces	bool	false	Print usage of shared spaces
+product	Memory	SharedDummyBlockSize	uintx	512*M	Size of dummy block used to shift heap addresses (in bytes)
+product	Memory	SharedReadWriteSize	uintx	NOT_LP64(12*M) LP64_ONLY(13*M)	Size of read-write space in permanent generation (in bytes)
+product	Memory	SharedReadOnlySize	uintx	10*M	Size of read-only space in permanent generation (in bytes)
+product	Memory	SharedMiscDataSize	uintx	NOT_LP64(4*M) LP64_ONLY(5*M)	Size of the shared data area adjacent to the heap (in bytes)
+product	Memory	SharedMiscCodeSize	uintx	4*M	Size of the shared code area adjacent to the heap (in bytes)
+diagnostic	JIT	SharedOptimizeColdStart	bool	true	At dump time, order shared objects to achieve better cold startup time.
+develop	JIT	SharedOptimizeColdStartPolicy	intx	2	Reordering policy for SharedOptimizeColdStart 0=favor classload-time locality, 1=balanced, 2=favor runtime locality
+diagnostic	Memory	SharedSkipVerify	bool	false	Skip assert() and verify() which page-in unwanted shared objects. 
+diagnostic	Java Language	EnableInvokeDynamic	bool	true	support JSR 292 (method handles, invokedynamic, anonymous classes)
+product	Java Language	AnonymousClasses	bool	false	support sun.misc.Unsafe.defineAnonymousClass (deprecated)
+experimental	Java Language	EnableMethodHandles	bool	false	support method handles (deprecated)
+diagnostic	Java Language	MethodHandlePushLimit	intx	3	number of additional stack slots a method handle may push
+diagnostic	Trace	PrintMethodHandleStubs	bool	false	Print generated stub code for method handles
+develop	Trace	TraceMethodHandles	bool	false	trace internal method handle operations
+diagnostic	Java Language	VerifyMethodHandles	bool	trueInDebug	perform extra checks when constructing method handles
+diagnostic	JIT	OptimizeMethodHandles	bool	true	when constructing method handles, try to improve them
+develop	Java Language	StressMethodHandleWalk	bool	false	Process all method handles with MethodHandleWalk
+experimental	Java Language	TrustFinalNonStaticFields	bool	false	trust final non-static declarations for constant folding
+experimental	Java Language	AllowInvokeGeneric	bool	false	accept MethodHandle.invoke and MethodHandle.invokeGeneric as equivalent methods
+develop	Trace	TraceInvokeDynamic	bool	false	trace internal invoke dynamic operations
+diagnostic	Misc	PauseAtStartup	bool	false	Causes the VM to pause at startup time and wait for the pause file to be removed (default: ./vm.paused.<pid>)
+diagnostic	Misc	PauseAtStartupFile	ccstr	NULL	The file to create and for whose removal to await when pausing at startup. (default: ./vm.paused.<pid>)
+diagnostic	Misc	PauseAtExit	bool	false	Pause and wait for keypress on exit if a debugger is attached
+product	Trace	ExtendedDTraceProbes	bool	false	Enable performance-impacting dtrace probes
+product	Trace	DTraceMethodProbes	bool	false	Enable dtrace probes for method-entry and method-exit
+product	Trace	DTraceAllocProbes	bool	false	Enable dtrace probes for object allocation
+product	Trace	DTraceMonitorProbes	bool	false	Enable dtrace probes for monitor events
+product	Verify	RelaxAccessControlCheck	bool	false	Relax the access control checks in the verifier
+diagnostic	Trace	PrintDTraceDOF	bool	false	Print the DTrace DOF passed to the system for JSDT probes
+product	String	StringTableSize	uintx	1009	Number of buckets in the interned String table
+product	OS	UseVMInterruptibleIO	bool	false	(Unstable, Solaris-specific) Thread interrupt before or with EINTR for I/O operations results in OS_INTRPT. The default value of this flag is true for JDK 6 and earlier

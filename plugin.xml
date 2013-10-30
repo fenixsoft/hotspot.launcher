@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+         
+               <launchConfigurationTabGroup
+            class="org.fenixsoft.hotspot.launch.HotSpotJavaTabGroup"
+            helpContextId="org.eclipse.jdt.debug.ui.launchConfigHelpContext.local_java_application"
+            id="org.eclipse.jdt.debug.ui.launchConfigurationTabGroup.hotspotJava"
+            type="org.fenixsoft.hotspot.launch.localHotSpotJavaApplication">
+         <launchMode
+               description="%localJavaApplicationTabGroupDescription.debug"
+               mode="debug"
+               perspective="org.eclipse.debug.ui.DebugPerspective">
+         </launchMode>
+         <launchMode
+               description="%localJavaApplicationTabGroupDescription.run"
+               mode="run">
+         </launchMode>
+      </launchConfigurationTabGroup>
+   </extension>
+<extension
+         point="org.eclipse.debug.ui.launchShortcuts">
+      <shortcut
+            class="org.fenixsoft.hotspot.launch.HotSpotJavaApplicationLaunchShortcut"
+            description="HotSpotJavaLaunchShortcut.description"
+            helpContextId="org.eclipse.jdt.debug.ui.shortcut_local_java_application"
+            icon="icons/javaapp.gif"
+            id="org.fenixsoft.hotspot.launch.localHotSpotJavaShortcut"
+            label="HotSpot Java Application"
+            modes="run, debug">
+         <contextualLaunch>
+           <enablement>
+             <with variable="selection">
+               <count value="1"/>
+                <iterate>
+                 <and>
+                  <adapt type="org.eclipse.jdt.core.IJavaElement">
+                  	<test property="org.eclipse.jdt.core.isInJavaProject"/>
+                  </adapt>
+               	  <or>
+               	    <test property="org.eclipse.jdt.launching.hasMain"/>
+               	    <test property="org.eclipse.jdt.launching.isContainer"/>
+               	    <test property="org.eclipse.jdt.launching.isPackageFragment"/>
+               	    <test property="org.eclipse.jdt.launching.isPackageFragmentRoot"/>
+               	  </or>
+                 </and>
+                </iterate>
+               </with>
+           </enablement>
+  		 </contextualLaunch>
+         <configurationType
+               id="org.fenixsoft.hotspot.launch.localHotSpotJavaApplication">
+         </configurationType>
+         <description
+               description="%RunJavaLaunchShortcut.description"
+               mode="run">
+         </description>
+         <description
+               description="%DebugJavaLaunchShortcut.description"
+               mode="debug">
+         </description>
+      </shortcut>
+   </extension>
+   <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="org.fenixsoft.hotspot.launch.HotSpotJavaLaunchDelegate"
+            delegateDescription="%localJavaApplicationDelegate.description"
+            delegateName="EclipseJDTLauncher.name"
+            id="org.fenixsoft.hotspot.launch.localHotSpotJavaApplication"
+            migrationDelegate="org.eclipse.jdt.internal.launching.JavaMigrationDelegate"
+            modes="run, debug"
+            name="HotSpot Java Application"
+            sourceLocatorId="org.eclipse.jdt.launching.sourceLocator.JavaSourceLookupDirector"
+            sourcePathComputerId="org.eclipse.jdt.launching.sourceLookup.javaSourcePathComputer">
+      </launchConfigurationType>
+   </extension>
+      <extension
+         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+      <launchConfigurationTypeImage
+            configTypeID="org.fenixsoft.hotspot.launch.localHotSpotJavaApplication"
+            icon="icons/javaapp.gif"
+            id="org.fenixsoft.hotspot.launch.launchConfigurationHotSpotTypeImage">
+      </launchConfigurationTypeImage>
+   </extension>
+</plugin>
