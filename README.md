@@ -11,3 +11,7 @@
 -----------------------                                                                         
 
 一个用于快速生成HotSpot虚拟机启动参数的Eclipse插件
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fenixsoft/org.fenixsoft.hotspot.launcher/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
