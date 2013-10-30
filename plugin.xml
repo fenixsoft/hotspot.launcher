@@ -10,12 +10,12 @@
             id="org.eclipse.jdt.debug.ui.launchConfigurationTabGroup.hotspotJava"
             type="org.fenixsoft.hotspot.launch.localHotSpotJavaApplication">
          <launchMode
-               description="%localJavaApplicationTabGroupDescription.debug"
+               description="Debug a java applicaiton with hotspot jvm"
                mode="debug"
                perspective="org.eclipse.debug.ui.DebugPerspective">
          </launchMode>
          <launchMode
-               description="%localJavaApplicationTabGroupDescription.run"
+               description="Run a java applicaiton with hotspot jvm"
                mode="run">
          </launchMode>
       </launchConfigurationTabGroup>
@@ -54,11 +54,11 @@
                id="org.fenixsoft.hotspot.launch.localHotSpotJavaApplication">
          </configurationType>
          <description
-               description="%RunJavaLaunchShortcut.description"
+               description="Run a java applicaiton with hotspot jvm"
                mode="run">
          </description>
          <description
-               description="%DebugJavaLaunchShortcut.description"
+               description="Debug a java applicaiton with hotspot jvm"
                mode="debug">
          </description>
       </shortcut>
@@ -67,7 +67,7 @@
          point="org.eclipse.debug.core.launchConfigurationTypes">
       <launchConfigurationType
             delegate="org.fenixsoft.hotspot.launch.HotSpotJavaLaunchDelegate"
-            delegateDescription="%localJavaApplicationDelegate.description"
+            delegateDescription="Run a java application with hotspot jvm"
             delegateName="EclipseJDTLauncher.name"
             id="org.fenixsoft.hotspot.launch.localHotSpotJavaApplication"
             migrationDelegate="org.eclipse.jdt.internal.launching.JavaMigrationDelegate"
