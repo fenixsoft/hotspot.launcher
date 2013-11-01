@@ -102,7 +102,7 @@ public class ArgumentTypeFilterDetailsDialog extends Dialog {
 			public void widgetSelected(SelectionEvent e) {
 			}
 		});
-		chk_experimental.setText("Experimental (flags are experimental ,not part of the officially supported product, need XX:+UnlockExperimentalVMOptions)");
+		chk_experimental.setText("Experimental (flags are experimental ,not part of the officially supported product, need UnlockExperimentalVMOptions)");
 
 		chk_develop = new Button(grpArgumentType, SWT.CHECK);
 		chk_develop.setText("Develop (flags are settable / visible only during development and are constant in the PRODUCT version)");
@@ -113,7 +113,7 @@ public class ArgumentTypeFilterDetailsDialog extends Dialog {
 			public void widgetSelected(SelectionEvent e) {
 			}
 		});
-		chk_diagnostic.setText("Diagnostic (flags are used for diagnosis of VM bugs or quality assurance, need +UnlockDiagnosticVMOptions in product version)");
+		chk_diagnostic.setText("Diagnostic (flags are used for diagnosis of VM bugs or quality assurance, need UnlockDiagnosticVMOptions in product version)");
 
 		chk_notproduct = new Button(grpArgumentType, SWT.CHECK);
 		chk_notproduct.setText("NotProduct (flags are settable / visible only during development and are not declared in the PRODUCT version)");
